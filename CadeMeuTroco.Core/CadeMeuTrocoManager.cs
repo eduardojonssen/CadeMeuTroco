@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CadeMeuTroco.Core.Processors;
 
 namespace CadeMeuTroco.Core {
 
     public class CadeMeuTrocoManager {
+
+        public List<int> AvailableBills = new List<int>() { 10000, 5000, 2000, 1000, 500, 200 };
 
         /// <summary>
         /// Moedas disponiveis na maquina.
@@ -34,10 +37,39 @@ namespace CadeMeuTroco.Core {
                 // Calcula o valor do troco.
                 long changeAmount = request.PaidAmountInCents - request.ProductAmountInCents;
 
+                // TODO: Precisamos chamar processador, caso o troco seja zero?
+
+                // TODO: Chamar o factory para obter o processador a ser utilizado.
+
+                // TODO: Chamar o metodo calculate do processador e obter o troco calculado.
+
+                // TODO: Subtrair o troco retornado pelo processador do troco original a ser retornado.
+
+                // TODO: Caso o troco seja maior que zero, devemos voltar para a primeira etapa.
+
+                Dictionary<int, long> change = new Dictionary<int, long>();
+                long changeRest = changeAmount;
+                while (changeRest > 0)
+                {
+                    AbstractProcessor proc = ProcessorFactory.CreateProcessor(changeRest);
+                    Dictionary<int, long> monetaryObjs = proc.CalculateChange(changeRest);
+
+                    foreach (KeyValuePair<int, long> kvPair in monetaryObjs) {
+
+                        change.Add(kvPair.Key, kvPair.Value);
+                        changeRest = changeRest - kvPair.Key * kvPair.Value;
+                    }
+                    
+                    // TODO: calcular o troco restante.
+
+
+                }
+                
                 response.ChangeAmount = changeAmount;
+                response.ChangeDictionary = change;
 
                 //Calcula o número de moedas de cada valor que serão retornadas como troco.
-                response.CoinDictionary = this.CalculateCoins(changeAmount);
+                //response.CoinDictionary = this.CalculateCoins(changeAmount);
 
                 response.Success = true;
             }
@@ -51,33 +83,6 @@ namespace CadeMeuTroco.Core {
                 report.Message = "Ocorreu um erro ao processar sua requisição. Por favor, tente novamente mais tarde.";
 
                 response.ReportCollection.Add(report);
-            }
-
-            return response;
-        }
-
-        /// <summary>
-        /// Calcula a quantidade de moedas para o troco.
-        /// </summary>
-        /// <returns></returns>
-        private Dictionary<int, long> CalculateCoins(long changeAmountInCents) {
-
-            //Dicionário para guardar o número de moedas de cada valor
-            Dictionary<int, long> response= new Dictionary<int,long>();
-
-            //Valor atual do troco após cada iteração
-            long currentChange = changeAmountInCents;
-
-            foreach (int coin in this.AvailableCoins.OrderByDescending(p => p)) {
-
-                //Numero de moedas para o valor atual
-                long numberOfCoins = currentChange/coin;
-
-                //Guarda o resto desta divisão para a próxima iteração
-                currentChange = currentChange % coin;
-
-                //Adiciona ao dicionário o número de moedas deste valor
-                response.Add(coin, numberOfCoins);
             }
 
             return response;

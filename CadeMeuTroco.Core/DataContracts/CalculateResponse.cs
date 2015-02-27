@@ -30,6 +30,6 @@ namespace CadeMeuTroco.Core.DataContracts {
         /// <summary>
         /// Dicionário com quantidade de moedas por tipo de moeda.
         /// </summary>
-        public Dictionary<int, long> CoinDictionary { get; set; }
+        public Dictionary<int, long> ChangeDictionary { get; set; }
     }
 }

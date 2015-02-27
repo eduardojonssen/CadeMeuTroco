@@ -53,7 +53,7 @@ namespace CadeMeuTroco {
                 stringBuilder.AppendLine(string.Format("Valor total: {0}", response.ChangeAmount.Value));
 
                 //Percorre a lista de moedas e exibe a resposta 
-                foreach (KeyValuePair<int, long> coin in response.CoinDictionary) {
+                foreach (KeyValuePair<int, long> coin in response.ChangeDictionary) {
                     stringBuilder.AppendLine(string.Format("Moeda: {0} | Quantidade: {1}", coin.Key, coin.Value));
                 }
 

@@ -44,8 +44,13 @@
     <Compile Include="DataContracts\CalculateRequest.cs" />
     <Compile Include="DataContracts\CalculateResponse.cs" />
     <Compile Include="DataContracts\Report.cs" />
+    <Compile Include="Processors\AbstractProcessor.cs" />
+    <Compile Include="Processors\BillProcessor.cs" />
+    <Compile Include="Processors\CoinProcessor.cs" />
+    <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
