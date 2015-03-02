@@ -5,20 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CadeMeuTroco.Core.Processors {
+    public class CandyProcessor : AbstractProcessor {
 
-    public class CoinProcessor : AbstractProcessor {
+        public CandyProcessor() {
 
-        
-        /// <summary>
-        /// Retorna a lista de moedas disponíveis
-        /// </summary>
-        /// <returns></returns>
+        }
+
         public override List<int> GetAvailableValues() {
-            return new List<int>() { 100, 50, 25, 10, 5 };
+            return new List<int>() { 1 };
         }
 
         public override string GetName() {
-            return "Coin";
+            return "Candy";
         }
     }
 }

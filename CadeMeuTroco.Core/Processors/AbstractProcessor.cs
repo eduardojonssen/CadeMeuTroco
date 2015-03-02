@@ -16,6 +16,12 @@ namespace CadeMeuTroco.Core.Processors {
         public abstract List<int> GetAvailableValues();
 
         /// <summary>
+        /// Retorna o nome
+        /// </summary>
+        /// <returns></returns>
+        public abstract string GetName();
+
+        /// <summary>
         /// Retorna um dicionario com a quantidade de moedas ou notas de cada tipo que serão retornadas
         /// </summary>
         /// <param name="changeAmountInCents"></param>

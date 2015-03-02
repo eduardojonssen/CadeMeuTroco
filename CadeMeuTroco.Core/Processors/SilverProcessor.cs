@@ -5,20 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CadeMeuTroco.Core.Processors {
+    public class SilverProcessor : AbstractProcessor {
+        public SilverProcessor() {
 
-    public class CoinProcessor : AbstractProcessor {
+        }
 
-        
-        /// <summary>
-        /// Retorna a lista de moedas disponíveis
-        /// </summary>
-        /// <returns></returns>
         public override List<int> GetAvailableValues() {
-            return new List<int>() { 100, 50, 25, 10, 5 };
+            return new List<int>() { 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000 };
         }
 
         public override string GetName() {
-            return "Coin";
+            return "Silver";
         }
     }
 }

@@ -5,10 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CadeMeuTroco.Core.Processors;
+using CadeMeuTroco.Core.Util;
+using Dlp.Framework;
 
 namespace CadeMeuTroco.Core {
 
     public class CadeMeuTrocoManager {
+
+        private ILog log = new FileLog(@"C:\Logs", "log");
 
         public List<int> AvailableBills = new List<int>() { 10000, 5000, 2000, 1000, 500, 200 };
 
@@ -26,8 +30,10 @@ namespace CadeMeuTroco.Core {
         public CalculateResponse Calculate(CalculateRequest request) {
 
             CalculateResponse response = new CalculateResponse();
-
+            string serializedRequest = Serializer.JsonSerialize(request);
             try {
+                this.log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
+
                 // Verifica se todos os dados recebidos são validos.
                 if (request.IsValid == false) {
                     response.ReportCollection = request.ReportCollection;
@@ -37,45 +43,33 @@ namespace CadeMeuTroco.Core {
                 // Calcula o valor do troco.
                 long changeAmount = request.PaidAmountInCents - request.ProductAmountInCents;
 
-                // TODO: Precisamos chamar processador, caso o troco seja zero?
-
-                // TODO: Chamar o factory para obter o processador a ser utilizado.
-
-                // TODO: Chamar o metodo calculate do processador e obter o troco calculado.
-
-                // TODO: Subtrair o troco retornado pelo processador do troco original a ser retornado.
-
-                // TODO: Caso o troco seja maior que zero, devemos voltar para a primeira etapa.
-
-                Dictionary<int, long> change = new Dictionary<int, long>();
                 long changeRest = changeAmount;
-                while (changeRest > 0)
-                {
+
+                while (changeRest > 0) {
+
+                    ChangeData currentData = new ChangeData();
+
                     AbstractProcessor proc = ProcessorFactory.CreateProcessor(changeRest);
                     Dictionary<int, long> monetaryObjs = proc.CalculateChange(changeRest);
 
+                    currentData.Name = proc.GetName();
+                    currentData.ChangeDictionary = monetaryObjs;
+
                     foreach (KeyValuePair<int, long> kvPair in monetaryObjs) {
 
-                        change.Add(kvPair.Key, kvPair.Value);
                         changeRest = changeRest - kvPair.Key * kvPair.Value;
                     }
-                    
-                    // TODO: calcular o troco restante.
 
-
+                    response.ChangeCollection.Add(currentData);
                 }
-                
-                response.ChangeAmount = changeAmount;
-                response.ChangeDictionary = change;
 
-                //Calcula o número de moedas de cada valor que serão retornadas como troco.
-                //response.CoinDictionary = this.CalculateCoins(changeAmount);
+                response.ChangeAmount = changeAmount;
 
                 response.Success = true;
             }
             catch (Exception ex) {
 
-                // TODO: Log da exceção.
+                this.log.Log(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
 
                 Report report = new Report();
 

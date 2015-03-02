@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CadeMeuTroco.Core.DataContracts {
-    
+
     public sealed class CalculateResponse {
 
         public CalculateResponse() {
             this.ReportCollection = new List<Report>();
+            this.ChangeCollection = new List<ChangeData>();
         }
 
         /// <summary>
@@ -28,8 +29,8 @@ namespace CadeMeuTroco.Core.DataContracts {
         public Nullable<long> ChangeAmount { get; set; }
 
         /// <summary>
-        /// Dicionário com quantidade de moedas por tipo de moeda.
+        /// Lista com quantidade de moedas por tipo de moeda.
         /// </summary>
-        public Dictionary<int, long> ChangeDictionary { get; set; }
+        public List<ChangeData> ChangeCollection { get; set; }
     }
 }

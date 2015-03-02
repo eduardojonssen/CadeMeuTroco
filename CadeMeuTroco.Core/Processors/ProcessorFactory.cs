@@ -18,7 +18,10 @@ namespace CadeMeuTroco.Core.Processors {
             List<AbstractProcessor> processorCollection = new List<AbstractProcessor>() {
             
                 new BillProcessor(),
-                new CoinProcessor()
+                new CoinProcessor(),
+                new GoldProcessor(),
+                new CandyProcessor(),
+                new SilverProcessor()
 
                 // Adicione novos processadores acima desta linha.
             };
@@ -30,7 +33,7 @@ namespace CadeMeuTroco.Core.Processors {
             // Analisa cada processador e seleciona o mais adequado para processar o valor do troco.
             foreach (AbstractProcessor processor in orderedProcessors) {
 
-                if (processor.GetAvailableValues().Min() < changeAmountInCents) {
+                if (processor.GetAvailableValues().Min() <= changeAmountInCents) {
 
                     return processor;
                 }
