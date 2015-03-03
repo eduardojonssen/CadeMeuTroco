@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CadeMeuTroco.Core.Processors;
 using CadeMeuTroco.Core.Util;
 using Dlp.Framework;
+using System.IO;
 
 namespace CadeMeuTroco.Core {
 
@@ -43,25 +44,7 @@ namespace CadeMeuTroco.Core {
                 // Calcula o valor do troco.
                 long changeAmount = request.PaidAmountInCents - request.ProductAmountInCents;
 
-                long changeRest = changeAmount;
-
-                while (changeRest > 0) {
-
-                    ChangeData currentData = new ChangeData();
-
-                    AbstractProcessor proc = ProcessorFactory.CreateProcessor(changeRest);
-                    Dictionary<int, long> monetaryObjs = proc.CalculateChange(changeRest);
-
-                    currentData.Name = proc.GetName();
-                    currentData.ChangeDictionary = monetaryObjs;
-
-                    foreach (KeyValuePair<int, long> kvPair in monetaryObjs) {
-
-                        changeRest = changeRest - kvPair.Key * kvPair.Value;
-                    }
-
-                    response.ChangeCollection.Add(currentData);
-                }
+                response.ChangeCollection = CalculateEntities(changeAmount);
 
                 response.ChangeAmount = changeAmount;
 
@@ -78,8 +61,40 @@ namespace CadeMeuTroco.Core {
 
                 response.ReportCollection.Add(report);
             }
+            finally {
+
+                string serializedResponse = Serializer.JsonSerialize(response);
+                this.log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
+            }
 
             return response;
+        }
+
+        public List<ChangeData> CalculateEntities(long changeAmount) {
+
+            long changeRest = changeAmount;
+
+            List<ChangeData> changeDataCollection = new List<ChangeData>();
+
+            while (changeRest > 0) {
+
+                ChangeData currentData = new ChangeData();
+
+                AbstractProcessor proc = ProcessorFactory.CreateProcessor(changeRest);
+                Dictionary<int, long> monetaryObjs = proc.CalculateChange(changeRest);
+                
+                currentData.Name = proc.GetName();
+                currentData.ChangeDictionary = monetaryObjs.Where(p => p.Value > 0).ToDictionary(p => p.Key, p => p.Value);
+
+                foreach (KeyValuePair<int, long> kvPair in monetaryObjs) {
+
+                    changeRest = changeRest - kvPair.Key * kvPair.Value;
+                }
+
+                changeDataCollection.Add(currentData);
+            }
+
+            return changeDataCollection;
         }
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeMeuTroco", "CadeMeuTroc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeMeuTroco.Core", "CadeMeuTroco.Core\CadeMeuTroco.Core.csproj", "{1AF2F286-C71B-4E68-A83B-CAFA35A1ED5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeMeuTrocoTest", "CadeMeuTrocoTeste\CadeMeuTrocoTest.csproj", "{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1AF2F286-C71B-4E68-A83B-CAFA35A1ED5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF2F286-C71B-4E68-A83B-CAFA35A1ED5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF2F286-C71B-4E68-A83B-CAFA35A1ED5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
