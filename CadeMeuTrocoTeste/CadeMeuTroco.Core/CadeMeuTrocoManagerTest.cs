@@ -5,6 +5,8 @@ using CadeMeuTroco.Core;
 using CadeMeuTroco.Core.DataContracts;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using CadeMeuTroco.Core.Util;
+using CadeMeuTrocoTeste.CadeMeuTroco.Core.Mocks;
 
 namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
 
@@ -14,10 +16,13 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
 
         [TestMethod]
         public void CalculateEntities_GetChangeWithCoinsOnly_Test() {
-
+            
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
 
-            IEnumerable<ChangeData> result = manager.CalculateEntities(170);
+            PrivateObject privateObject = new PrivateObject(manager);
+            object objResult = privateObject.Invoke("CalculateEntities", Convert.ToInt64(170));
+
+            IEnumerable<ChangeData> result = (IEnumerable<ChangeData>)objResult;
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count() == 1);
@@ -41,10 +46,49 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
         public void CalculateEntities_GetEmptyChangeDataCollection_Test() {
    
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
-            IEnumerable<ChangeData> result = manager.CalculateEntities(0);
+
+            PrivateObject privateObject = new PrivateObject(manager);
+            object objResult = privateObject.Invoke("CalculateEntities", Convert.ToInt64(0));
+
+            IEnumerable<ChangeData> result = (IEnumerable<ChangeData>)objResult;
             
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count() == 0);
         }
+
+        [TestMethod]
+        public void Calculate_GetChangeDataWithCoinsOnly_Test() {
+
+            ConfigurationUtilityMock configurationUtility = new ConfigurationUtilityMock();
+            configurationUtility.LogPath = @"C:\Logs\Test";
+
+            CadeMeuTrocoManager manager = new CadeMeuTrocoManager(configurationUtility);
+
+            CalculateRequest request = new CalculateRequest();
+
+            request.ProductAmountInCents = 100;
+            request.PaidAmountInCents = 140;
+
+            CalculateResponse response = manager.Calculate(request);
+
+            Assert.IsNotNull(response);
+            Assert.IsTrue(response.Success == true);
+            Assert.IsTrue(response.ChangeAmount == 40);
+            Assert.IsTrue(response.ChangeCollection.Count() == 1);
+
+            ChangeData changeData = response.ChangeCollection.First();
+
+            Assert.IsTrue(changeData.Name == "Coin");
+            Assert.IsTrue(changeData.ChangeDictionary.Count() == 3);
+            Assert.IsTrue(changeData.ChangeDictionary.ContainsKey(25) == true);
+            Assert.IsTrue(changeData.ChangeDictionary.ContainsKey(10) == true);
+            Assert.IsTrue(changeData.ChangeDictionary.ContainsKey(5) == true);
+            Assert.AreEqual(1, changeData.ChangeDictionary[25]);
+            Assert.AreEqual(1, changeData.ChangeDictionary[10]);
+            Assert.AreEqual(1, changeData.ChangeDictionary[5]);
+
+
+        }
+
     }
 }

@@ -34,6 +34,7 @@
       <HintPath>..\packages\Dlp.Framework.dll.0.5.4\lib\net45\Dlp.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
@@ -57,7 +58,9 @@
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Processors\SilverProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ConfigurationUtility.cs" />
     <Compile Include="Util\FileLog.cs" />
+    <Compile Include="Util\IConfigurationUtility.cs" />
     <Compile Include="Util\ILog.cs" />
   </ItemGroup>
   <ItemGroup>

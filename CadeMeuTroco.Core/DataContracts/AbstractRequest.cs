@@ -12,7 +12,7 @@ namespace CadeMeuTroco.Core.DataContracts {
             this.ActualReportCollection = new List<Report>();
         }
 
-        public bool IsValid {
+        internal bool IsValid {
             get {
                 this.Validate();
                 return (this.ReportCollection.Any() == false);

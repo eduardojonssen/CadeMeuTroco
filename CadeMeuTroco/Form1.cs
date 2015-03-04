@@ -27,7 +27,7 @@ namespace CadeMeuTroco {
             long paidAmount = Convert.ToInt64(this.UxTxtPaidValue.Text);
 
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
-
+            
             CalculateRequest request = new CalculateRequest();
 
             request.PaidAmountInCents = paidAmount;

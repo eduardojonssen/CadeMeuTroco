@@ -56,11 +56,11 @@ namespace CadeMeuTroco.Core.Util {
                     using (StreamWriter writer = new StreamWriter(fs)) {
 
                         writer.WriteLine(string.Format("{0}: {1}", DateTime.Now, data));
-
+                                                
                         writer.Flush();
+                        fs.Flush();
                     }
-
-                    fs.Flush();
+                    
                 }
 
                 return true;

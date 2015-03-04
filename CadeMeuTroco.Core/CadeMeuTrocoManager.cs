@@ -8,19 +8,32 @@ using CadeMeuTroco.Core.Processors;
 using CadeMeuTroco.Core.Util;
 using Dlp.Framework;
 using System.IO;
+using System.Configuration;
 
 namespace CadeMeuTroco.Core {
 
+
     public class CadeMeuTrocoManager {
 
-        private ILog log = new FileLog(@"C:\Logs", "log");
+        private IConfigurationUtility _configurationUtility;
 
-        public List<int> AvailableBills = new List<int>() { 10000, 5000, 2000, 1000, 500, 200 };
+        public IConfigurationUtility ConfigurationUtility {
+            get {
+                if (this._configurationUtility == null) {
+                    this._configurationUtility = new ConfigurationUtility();
+                }
+                return _configurationUtility;
+            }
+            set { _configurationUtility = value; }
+        }
 
-        /// <summary>
-        /// Moedas disponiveis na maquina.
-        /// </summary>
-        public List<int> AvailableCoins = new List<int>() { 100, 50, 25, 10, 5, 1 };
+        private ILog Log { get; set; }
+
+        public CadeMeuTrocoManager(IConfigurationUtility configurationUtility = null) {
+
+            this.ConfigurationUtility = configurationUtility;
+            this.Log = new FileLog(this.ConfigurationUtility.LogPath, "log");
+        }
 
         /// <summary>
         /// Calcula o valor do troco.
@@ -28,12 +41,12 @@ namespace CadeMeuTroco.Core {
         /// <param name="productValue">Valor do produto</param>
         /// <param name="paidAmountInCents">Valor pago pelo produto</param>
         /// <returns></returns>
-        public CalculateResponse Calculate(CalculateRequest request) {
+        public CalculateResponse Calculate(CalculateRequest request, bool debug = false) {
 
             CalculateResponse response = new CalculateResponse();
             string serializedRequest = Serializer.JsonSerialize(request);
             try {
-                this.log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
 
                 // Verifica se todos os dados recebidos são validos.
                 if (request.IsValid == false) {
@@ -52,7 +65,7 @@ namespace CadeMeuTroco.Core {
             }
             catch (Exception ex) {
 
-                this.log.Log(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Log(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
 
                 Report report = new Report();
 
@@ -64,13 +77,13 @@ namespace CadeMeuTroco.Core {
             finally {
 
                 string serializedResponse = Serializer.JsonSerialize(response);
-                this.log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
+                this.Log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
             }
 
             return response;
         }
 
-        public List<ChangeData> CalculateEntities(long changeAmount) {
+        private List<ChangeData> CalculateEntities(long changeAmount) {
 
             long changeRest = changeAmount;
 
@@ -82,7 +95,7 @@ namespace CadeMeuTroco.Core {
 
                 AbstractProcessor proc = ProcessorFactory.CreateProcessor(changeRest);
                 Dictionary<int, long> monetaryObjs = proc.CalculateChange(changeRest);
-                
+
                 currentData.Name = proc.GetName();
                 currentData.ChangeDictionary = monetaryObjs.Where(p => p.Value > 0).ToDictionary(p => p.Key, p => p.Value);
 

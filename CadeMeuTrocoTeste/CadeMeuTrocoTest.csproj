@@ -51,9 +51,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CadeMeuTroco.Core\CadeMeuTrocoManagerTest.cs" />
+    <Compile Include="CadeMeuTroco.Core\Mocks\ConfigurationUtilityMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CadeMeuTroco.Core\CadeMeuTroco.Core.csproj">
       <Project>{1af2f286-c71b-4e68-a83b-cafa35a1ed5c}</Project>
