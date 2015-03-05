@@ -9,6 +9,6 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core.Mocks {
 
     public class ConfigurationUtilityMock : IConfigurationUtility {
 
-        public string LogPath { get; set; }
+        public string LogPath { get { return "C:\\Logs\\Test"; } }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CadeMeuTroco.Core.Processors {
-    public abstract class AbstractProcessor {
+    public abstract class AbstractProcessor : IProcessor {
 
         public AbstractProcessor() { }
 

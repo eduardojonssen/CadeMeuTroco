@@ -8,6 +8,6 @@ namespace CadeMeuTroco.Core.Util {
 
     public interface ILog {
 
-        bool Log(string data);
+        bool Save(string data);
     }
 }

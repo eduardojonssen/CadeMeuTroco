@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dlp.Framework.Container;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,9 +29,12 @@ namespace CadeMeuTroco.Core.Util {
             }
         }
 
-        public FileLog(string path, string fileName) {
-            this.LogPath = path;
-            this.FileName = fileName;
+        public FileLog() {
+
+            IConfigurationUtility configurationUtility = IocFactory.Resolve<IConfigurationUtility>();
+
+            this.LogPath = configurationUtility.LogPath;
+            this.FileName = DateTime.Now.ToString("yyyyMMdd");
         }
 
         /// <summary>
@@ -38,7 +42,7 @@ namespace CadeMeuTroco.Core.Util {
         /// </summary>
         /// <param name="data">Dados a serem logados</param>
         /// <returns></returns>
-        public bool Log(string data) {
+        public bool Save(string data) {
 
             try {
                 // Cria o diretório de logs, caso não exista.
@@ -57,10 +61,9 @@ namespace CadeMeuTroco.Core.Util {
 
                         writer.WriteLine(string.Format("{0}: {1}", DateTime.Now, data));
                                                 
-                        writer.Flush();
-                        fs.Flush();
+                        writer.Close();
                     }
-                    
+                    fs.Close();
                 }
 
                 return true;

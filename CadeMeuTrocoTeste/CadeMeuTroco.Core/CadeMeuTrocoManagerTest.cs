@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using CadeMeuTroco.Core.Util;
 using CadeMeuTrocoTeste.CadeMeuTroco.Core.Mocks;
+using Dlp.Framework.Container;
 
 namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
 
@@ -59,10 +60,15 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
         [TestMethod]
         public void Calculate_GetChangeDataWithCoinsOnly_Test() {
 
-            ConfigurationUtilityMock configurationUtility = new ConfigurationUtilityMock();
-            configurationUtility.LogPath = @"C:\Logs\Test";
+            IocFactory.Register(
+                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtilityMock>()
+                );
 
-            CadeMeuTrocoManager manager = new CadeMeuTrocoManager(configurationUtility);
+            IocFactory.Register(
+                    Component.For<ILog>().ImplementedBy<FileLog>()
+                );
+
+            CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
 
             CalculateRequest request = new CalculateRequest();
 

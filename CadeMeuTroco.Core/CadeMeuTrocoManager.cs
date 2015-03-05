@@ -9,30 +9,30 @@ using CadeMeuTroco.Core.Util;
 using Dlp.Framework;
 using System.IO;
 using System.Configuration;
+using Dlp.Framework.Container;
 
 namespace CadeMeuTroco.Core {
 
 
-    public class CadeMeuTrocoManager {
-
-        private IConfigurationUtility _configurationUtility;
-
-        public IConfigurationUtility ConfigurationUtility {
-            get {
-                if (this._configurationUtility == null) {
-                    this._configurationUtility = new ConfigurationUtility();
-                }
-                return _configurationUtility;
-            }
-            set { _configurationUtility = value; }
-        }
+    public class CadeMeuTrocoManager : ICadeMeuTrocoManager {
 
         private ILog Log { get; set; }
 
-        public CadeMeuTrocoManager(IConfigurationUtility configurationUtility = null) {
+        public CadeMeuTrocoManager() {
 
-            this.ConfigurationUtility = configurationUtility;
-            this.Log = new FileLog(this.ConfigurationUtility.LogPath, "log");
+            Dlp.Framework.Container.IocFactory.Register(
+                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>()                    
+                );
+
+            IConfigurationUtility configurationUtility =
+                Dlp.Framework.Container.IocFactory.Resolve<IConfigurationUtility>();
+
+            Dlp.Framework.Container.IocFactory.Register(
+                    Component.For<ILog>().ImplementedBy<EventViewerLog>().Interceptor<CadeMeuTrocoInterceptor>()
+                );
+
+            this.Log = Dlp.Framework.Container.IocFactory.Resolve<ILog>();
+            //this.Log = new FileLog(configurationUtility.LogPath, "log");
         }
 
         /// <summary>
@@ -41,12 +41,12 @@ namespace CadeMeuTroco.Core {
         /// <param name="productValue">Valor do produto</param>
         /// <param name="paidAmountInCents">Valor pago pelo produto</param>
         /// <returns></returns>
-        public CalculateResponse Calculate(CalculateRequest request, bool debug = false) {
+        public CalculateResponse Calculate(CalculateRequest request) {
 
             CalculateResponse response = new CalculateResponse();
             string serializedRequest = Serializer.JsonSerialize(request);
             try {
-                this.Log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Save(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
 
                 // Verifica se todos os dados recebidos são validos.
                 if (request.IsValid == false) {
@@ -65,7 +65,7 @@ namespace CadeMeuTroco.Core {
             }
             catch (Exception ex) {
 
-                this.Log.Log(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Save(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
 
                 Report report = new Report();
 
@@ -77,7 +77,7 @@ namespace CadeMeuTroco.Core {
             finally {
 
                 string serializedResponse = Serializer.JsonSerialize(response);
-                this.Log.Log(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
+                this.Log.Save(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
             }
 
             return response;
