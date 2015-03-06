@@ -21,15 +21,15 @@ namespace CadeMeuTroco.Core {
         public CadeMeuTrocoManager() {
 
             Dlp.Framework.Container.IocFactory.Register(
-                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>()                    
+                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>(),
+                    Component.For<ILog>().ImplementedBy<EventViewerLog>()
+                    .ImplementedBy<DatabaseLog>().IsDefault()
+                    .Interceptor<CadeMeuTrocoInterceptor>(),
+                    Component.FromThisAssembly("CadeMeuTroco.Core.Repository")
                 );
 
             IConfigurationUtility configurationUtility =
                 Dlp.Framework.Container.IocFactory.Resolve<IConfigurationUtility>();
-
-            Dlp.Framework.Container.IocFactory.Register(
-                    Component.For<ILog>().ImplementedBy<EventViewerLog>().Interceptor<CadeMeuTrocoInterceptor>()
-                );
 
             this.Log = Dlp.Framework.Container.IocFactory.Resolve<ILog>();
             //this.Log = new FileLog(configurationUtility.LogPath, "log");
@@ -46,7 +46,7 @@ namespace CadeMeuTroco.Core {
             CalculateResponse response = new CalculateResponse();
             string serializedRequest = Serializer.JsonSerialize(request);
             try {
-                this.Log.Save(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest), CategoryType.Request);
 
                 // Verifica se todos os dados recebidos são validos.
                 if (request.IsValid == false) {
@@ -65,7 +65,7 @@ namespace CadeMeuTroco.Core {
             }
             catch (Exception ex) {
 
-                this.Log.Save(string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest));
+                this.Log.Save("Calculate", string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest), CategoryType.Exception);
 
                 Report report = new Report();
 
@@ -77,7 +77,7 @@ namespace CadeMeuTroco.Core {
             finally {
 
                 string serializedResponse = Serializer.JsonSerialize(response);
-                this.Log.Save(string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse));
+                this.Log.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse), CategoryType.Response);
             }
 
             return response;

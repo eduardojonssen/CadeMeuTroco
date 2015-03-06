@@ -9,14 +9,14 @@ namespace CadeMeuTroco.Core.Util {
 
     public sealed class EventViewerLog : ILog {
 
-        public bool Save(string data) {
+        public bool Save(string methodName, string logData, CategoryType categoryType) {
 
             try {
 
                 EventLog eventLog = new EventLog();
                 eventLog.Source = "CadeMeuTroco";
 
-                eventLog.WriteEntry(data, EventLogEntryType.Information);
+                eventLog.WriteEntry(logData, EventLogEntryType.Information);
 
                 return true;
             }

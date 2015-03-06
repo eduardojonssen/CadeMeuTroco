@@ -9,6 +9,14 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core.Mocks {
 
     public class ConfigurationUtilityMock : IConfigurationUtility {
 
-        public string LogPath { get { return "C:\\Logs\\Test"; } }
+        public string LogPath { get; set; }
+
+        public string DatabaseConnection {
+            get { throw new NotImplementedException(); }
+        }
+
+        public Guid AccessKey {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dlp.Framework">
-      <HintPath>..\packages\Dlp.Framework.dll.0.5.4\lib\net45\Dlp.Framework.dll</HintPath>
+    <Reference Include="Dlp.Connectors">
+      <HintPath>..\packages\Dlp.Connectors.dll.0.4.8\lib\net45\Dlp.Connectors.dll</HintPath>
+    </Reference>
+    <Reference Include="Dlp.Framework, Version=0.1.5543.29333, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dlp.Framework.dll.0.5.5\lib\net45\Dlp.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -46,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CadeMeuTrocoInterceptor.cs" />
     <Compile Include="CadeMeuTrocoManager.cs" />
+    <Compile Include="CategoryType.cs" />
     <Compile Include="DataContracts\AbstractRequest.cs" />
     <Compile Include="DataContracts\CalculateRequest.cs" />
     <Compile Include="DataContracts\CalculateResponse.cs" />
@@ -61,7 +66,11 @@
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Processors\SilverProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ApplicationLogRepository.cs" />
+    <Compile Include="Repository\Entities\ApplicationLogEntity.cs" />
+    <Compile Include="Repository\IApplicationLogRepository.cs" />
     <Compile Include="Util\ConfigurationUtility.cs" />
+    <Compile Include="Util\DatabaseLog.cs" />
     <Compile Include="Util\EventViewerLog.cs" />
     <Compile Include="Util\FileLog.cs" />
     <Compile Include="Util\IConfigurationUtility.cs" />

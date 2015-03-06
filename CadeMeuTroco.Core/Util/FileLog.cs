@@ -42,7 +42,7 @@ namespace CadeMeuTroco.Core.Util {
         /// </summary>
         /// <param name="data">Dados a serem logados</param>
         /// <returns></returns>
-        public bool Save(string data) {
+        public bool Save(string methodName, string logData, CategoryType categoryType) {
 
             try {
                 // Cria o diretório de logs, caso não exista.
@@ -52,14 +52,14 @@ namespace CadeMeuTroco.Core.Util {
 
                 // Verifica se o arquivo já existe. Caso negativo, cria o arquivo.
                 if (File.Exists(this.FullPath) == false) {
-                    File.Create(this.FullPath);
+                    File.Create(this.FullPath).Close();
                 }
 
                 using (FileStream fs = new FileStream(this.FullPath, FileMode.Append)) {
 
                     using (StreamWriter writer = new StreamWriter(fs)) {
 
-                        writer.WriteLine(string.Format("{0}: {1}", DateTime.Now, data));
+                        writer.WriteLine(string.Format("{0}: {1}", DateTime.Now, logData));
                                                 
                         writer.Close();
                     }

@@ -8,5 +8,9 @@ namespace CadeMeuTroco.Core.Util {
     public interface IConfigurationUtility {
 
         string LogPath { get; }
+
+        string DatabaseConnection { get; }
+
+        Guid AccessKey { get; }
     }
 }

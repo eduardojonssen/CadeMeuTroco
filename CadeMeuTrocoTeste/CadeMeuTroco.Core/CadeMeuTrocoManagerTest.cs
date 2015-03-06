@@ -17,7 +17,7 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
 
         [TestMethod]
         public void CalculateEntities_GetChangeWithCoinsOnly_Test() {
-            
+
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
 
             PrivateObject privateObject = new PrivateObject(manager);
@@ -45,14 +45,14 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
 
         [TestMethod]
         public void CalculateEntities_GetEmptyChangeDataCollection_Test() {
-   
+
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
 
             PrivateObject privateObject = new PrivateObject(manager);
             object objResult = privateObject.Invoke("CalculateEntities", Convert.ToInt64(0));
 
             IEnumerable<ChangeData> result = (IEnumerable<ChangeData>)objResult;
-            
+
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count() == 0);
         }
@@ -60,12 +60,12 @@ namespace CadeMeuTrocoTeste.CadeMeuTroco.Core {
         [TestMethod]
         public void Calculate_GetChangeDataWithCoinsOnly_Test() {
 
-            IocFactory.Register(
-                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtilityMock>()
-                );
+            ConfigurationUtilityMock mock = new ConfigurationUtilityMock();
+            mock.LogPath = "C:\\Logs\\Test";
 
             IocFactory.Register(
-                    Component.For<ILog>().ImplementedBy<FileLog>()
+                    Component.For<IConfigurationUtility>().Instance(mock),
+                    Component.For<ILog>().ImplementedBy<FileLog>().IsDefault()
                 );
 
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
