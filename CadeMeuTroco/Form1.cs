@@ -22,12 +22,16 @@ namespace CadeMeuTroco {
         }
 
         private void Calculate() {
+            this.UxTxtProcessorResult.Clear();
+            this.UxTxtResult.Clear();
 
             long productAmount = Convert.ToInt64(this.UxTxtProductValue.Text);
             long paidAmount = Convert.ToInt64(this.UxTxtPaidValue.Text);
 
             CadeMeuTrocoManager manager = new CadeMeuTrocoManager();
-            
+
+            manager.OnProcessorExecuted += manager_OnProcessorExecuted;
+
             CalculateRequest request = new CalculateRequest();
 
             request.PaidAmountInCents = paidAmount;
@@ -62,6 +66,11 @@ namespace CadeMeuTroco {
 
                 this.UxTxtResult.Text = stringBuilder.ToString();
             }
+        }
+
+        void manager_OnProcessorExecuted(object sender, string name, long change) {
+            string appendedText = string.Format("Nome: {0} | Troco: {1}\r\n", name, change);
+            this.UxTxtProcessorResult.AppendText(appendedText);
         }
     }
 }

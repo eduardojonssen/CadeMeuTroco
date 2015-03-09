@@ -13,19 +13,20 @@ using Dlp.Framework.Container;
 
 namespace CadeMeuTroco.Core {
 
+    public delegate void ProcessorExecutedEventHandler(object sender, string name, long change);
 
     public class CadeMeuTrocoManager : ICadeMeuTrocoManager {
 
         private ILog Log { get; set; }
+        private LogManager LogManager { get; set; }
+
+        public event ProcessorExecutedEventHandler OnProcessorExecuted;
 
         public CadeMeuTrocoManager() {
+            this.LogManager = new LogManager();
 
             Dlp.Framework.Container.IocFactory.Register(
-                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>(),
-                    Component.For<ILog>().ImplementedBy<EventViewerLog>()
-                    .ImplementedBy<DatabaseLog>().IsDefault()
-                    .Interceptor<CadeMeuTrocoInterceptor>(),
-                    Component.FromThisAssembly("CadeMeuTroco.Core.Repository")
+                    Component.For<IConfigurationUtility>().ImplementedBy<ConfigurationUtility>()
                 );
 
             IConfigurationUtility configurationUtility =
@@ -44,9 +45,11 @@ namespace CadeMeuTroco.Core {
         public CalculateResponse Calculate(CalculateRequest request) {
 
             CalculateResponse response = new CalculateResponse();
+            
             string serializedRequest = Serializer.JsonSerialize(request);
             try {
-                this.Log.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest), CategoryType.Request);
+                
+                this.LogManager.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateRequest", serializedRequest), CategoryType.Request);
 
                 // Verifica se todos os dados recebidos são validos.
                 if (request.IsValid == false) {
@@ -65,7 +68,7 @@ namespace CadeMeuTroco.Core {
             }
             catch (Exception ex) {
 
-                this.Log.Save("Calculate", string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest), CategoryType.Exception);
+                this.LogManager.Save("Calculate", string.Format("Erro: {0} | Nome do método: {1} | Objeto: {2} | JSON: {3}", ex.ToString(), "Calculate", "CalculateRequest", serializedRequest), CategoryType.Exception);
 
                 Report report = new Report();
 
@@ -77,7 +80,7 @@ namespace CadeMeuTroco.Core {
             finally {
 
                 string serializedResponse = Serializer.JsonSerialize(response);
-                this.Log.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse), CategoryType.Response);
+                this.LogManager.Save("Calculate", string.Format("Nome do método: {0} | Objeto: {1} | JSON: {2}", "Calculate", "CalculateResponse", serializedResponse), CategoryType.Response);
             }
 
             return response;
@@ -99,12 +102,18 @@ namespace CadeMeuTroco.Core {
                 currentData.Name = proc.GetName();
                 currentData.ChangeDictionary = monetaryObjs.Where(p => p.Value > 0).ToDictionary(p => p.Key, p => p.Value);
 
-                foreach (KeyValuePair<int, long> kvPair in monetaryObjs) {
+                long currentProduct = monetaryObjs.Sum(p => p.Key * p.Value);
 
-                    changeRest = changeRest - kvPair.Key * kvPair.Value;
-                }
+                changeRest = changeRest - currentProduct;
 
                 changeDataCollection.Add(currentData);
+
+                // Dispara o evento informando que um processador foi executado.
+                if (this.OnProcessorExecuted != null) {
+                    string nameProcessor = proc.GetName();
+
+                    this.OnProcessorExecuted(this, nameProcessor, currentProduct);
+                }
             }
 
             return changeDataCollection;

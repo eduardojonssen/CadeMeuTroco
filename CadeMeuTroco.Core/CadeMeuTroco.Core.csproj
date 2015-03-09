@@ -75,6 +75,7 @@
     <Compile Include="Util\FileLog.cs" />
     <Compile Include="Util\IConfigurationUtility.cs" />
     <Compile Include="Util\ILog.cs" />
+    <Compile Include="Util\LogManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

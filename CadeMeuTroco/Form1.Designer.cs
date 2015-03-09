@@ -30,6 +30,8 @@
             this.UxTxtResult = new System.Windows.Forms.TextBox();
             this.UxBtnResult = new System.Windows.Forms.Label();
             this.UxBtnCalculate = new System.Windows.Forms.Button();
+            this.UxTxtProcessorResult = new System.Windows.Forms.TextBox();
+            this.UxLblProcessorResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UxTxtProductValue
@@ -95,12 +97,31 @@
             this.UxBtnCalculate.UseVisualStyleBackColor = true;
             this.UxBtnCalculate.Click += new System.EventHandler(this.UxBtnCalculate_Click);
             // 
+            // UxTxtProcessorResult
+            // 
+            this.UxTxtProcessorResult.Location = new System.Drawing.Point(333, 43);
+            this.UxTxtProcessorResult.Multiline = true;
+            this.UxTxtProcessorResult.Name = "UxTxtProcessorResult";
+            this.UxTxtProcessorResult.Size = new System.Drawing.Size(516, 125);
+            this.UxTxtProcessorResult.TabIndex = 7;
+            // 
+            // UxLblProcessorResult
+            // 
+            this.UxLblProcessorResult.AutoSize = true;
+            this.UxLblProcessorResult.Location = new System.Drawing.Point(329, 20);
+            this.UxLblProcessorResult.Name = "UxLblProcessorResult";
+            this.UxLblProcessorResult.Size = new System.Drawing.Size(197, 20);
+            this.UxLblProcessorResult.TabIndex = 8;
+            this.UxLblProcessorResult.Text = "Resultado do Processador";
+            // 
             // Form1
             // 
             this.AcceptButton = this.UxBtnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 579);
+            this.Controls.Add(this.UxLblProcessorResult);
+            this.Controls.Add(this.UxTxtProcessorResult);
             this.Controls.Add(this.UxBtnCalculate);
             this.Controls.Add(this.UxBtnResult);
             this.Controls.Add(this.UxTxtResult);
@@ -124,6 +145,8 @@
         private System.Windows.Forms.TextBox UxTxtResult;
         private System.Windows.Forms.Label UxBtnResult;
         private System.Windows.Forms.Button UxBtnCalculate;
+        private System.Windows.Forms.TextBox UxTxtProcessorResult;
+        private System.Windows.Forms.Label UxLblProcessorResult;
     }
 }
 
