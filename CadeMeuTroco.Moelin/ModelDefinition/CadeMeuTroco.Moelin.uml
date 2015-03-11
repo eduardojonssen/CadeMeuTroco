@@ -1,0 +1,2702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="b210f2bc-1230-4636-895b-203944b99df4"
+  name="CadeMeuTroco.Moelin" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="fb04e77c-0813-44fd-a4ba-01fc12dae01d">
+      <body>Utilizar Factory</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="7f6463ba-7085-4698-b690-7471faa8b068"
+          LastKnownName="Selecionar o processador adequado para realizar o troco"
+          LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="bc7ddec3-8818-4322-9750-fe2016ae516e">
+      <body>Endpoint disponibilizado apenas para compatibilidade com aplicações mais antigas</body>
+      <annotatedElements>
+        <providedInterfaceMoniker
+          Id="488de625-593b-48ca-b934-5b8e980e3ab3"
+          LastKnownName="Port1"
+          LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="735ab814-6a0d-4c35-918a-61e2f9dd4ed2"
+        name="CadeMeuTroco"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <opaqueAction
+            Id="75e863ca-548c-41c3-ac79-43cafcdf830a"
+            name="Coletar valor do produto e valor pago"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f135f663-7826-433d-a910-333b37dacb21"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c189dd5b-905f-488a-a31e-20077b215771"
+                  LastKnownName="Calcular o valor do troco"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c189dd5b-905f-488a-a31e-20077b215771"
+            name="Calcular o valor do troco"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="454b430d-5a82-4854-9575-6f95ff6506c0"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ac6c6626-847c-4e4c-ba97-a4e29b47f93f"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7f6463ba-7085-4698-b690-7471faa8b068"
+            name="Selecionar o processador adequado para realizar o troco"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2b32b692-ec74-4404-a99a-0df46798f898"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7472e9e5-0ca4-4035-835c-3a55f9f413d3"
+                  LastKnownName="Verificar se encontrou um processador"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="02538115-e537-45c5-bd53-5a19c32dae95"
+            name="Executar o processador selecionado para calcular o troco atual"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="30c12039-bae9-43c1-8ebb-526526287a46"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1157d61e-66a5-411d-98d7-c00436f2581e"
+                  LastKnownName="Subtrair o troco atual do valor retornado pelo processador"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1157d61e-66a5-411d-98d7-c00436f2581e"
+            name="Subtrair o troco atual do valor retornado pelo processador"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="207f207c-9845-4bbf-8d43-6df102eeb35c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ea23478d-21af-4094-94d3-1dd3f5df15aa"
+                  LastKnownName="Verificar se o troco restante é zero"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ea23478d-21af-4094-94d3-1dd3f5df15aa"
+            name="Verificar se o troco restante é zero"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="64d16bc8-a2fa-4cac-82ac-0702e174f716"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="544e8bd2-750f-4919-bebd-ddc42336d90f"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ba76a40f-4eab-4d5c-8845-60ea7ff2966d"
+            name="Retornar os dados processados"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7b8299d0-afdf-43a1-96e4-fc6097dd1684"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="79bb799c-8ae2-4780-bd84-d7d5b75058c3"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="544e8bd2-750f-4919-bebd-ddc42336d90f"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8f8b1875-2ece-4459-a115-0e257d51af93"
+                guard="Troco diferente de zero"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7f6463ba-7085-4698-b690-7471faa8b068"
+                  LastKnownName="Selecionar o processador adequado para realizar o troco"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="df8ac104-4fb2-41f4-bf61-b734272aad40"
+                guard="Troco é zero"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ba76a40f-4eab-4d5c-8845-60ea7ff2966d"
+                  LastKnownName="Retornar os dados processados"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="79bb799c-8ae2-4780-bd84-d7d5b75058c3"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="7472e9e5-0ca4-4035-835c-3a55f9f413d3"
+            name="Verificar se encontrou um processador"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e1ada83a-ef1c-45fb-bfe2-0b05a95934c4"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="664ae97b-866c-4b2f-8694-b39ac75f15e7"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="664ae97b-866c-4b2f-8694-b39ac75f15e7"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="10afe366-f8a4-40b5-b3fd-d07794a5864b"
+                guard="Encontrou um processador"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="02538115-e537-45c5-bd53-5a19c32dae95"
+                  LastKnownName="Executar o processador selecionado para calcular o troco atual"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0dd3ef0a-c0b5-4cb4-ba0c-b8ac5950bd43"
+                guard="Não encontrou processador"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ab068fbe-4db7-40f7-99c6-1555bd3f1db6"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="ab068fbe-4db7-40f7-99c6-1555bd3f1db6"
+            name="ActivityFinal2"
+            isLeaf="false" />
+          <activityFinalNode
+            Id="57715a59-1119-43bd-bd7d-1b2635f5ed3e"
+            name="ActivityFinal3"
+            isLeaf="false" />
+          <decisionNode
+            Id="ac6c6626-847c-4e4c-ba97-a4e29b47f93f"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4efc36ba-54b7-47ea-abc9-45fdbb75a658"
+                guard="Troco &gt; 0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7f6463ba-7085-4698-b690-7471faa8b068"
+                  LastKnownName="Selecionar o processador adequado para realizar o troco"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c3c88854-db36-4bc9-91e2-282991cec3b2"
+                guard="Troco = 0"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="57715a59-1119-43bd-bd7d-1b2635f5ed3e"
+                  LastKnownName="ActivityFinal3"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <initialNode
+            Id="6e3348ca-9a75-44bc-a6f6-152cdf62a970"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b3ef76c7-e9f0-40c8-b5ae-2129dd454eda"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="75e863ca-548c-41c3-ac79-43cafcdf830a"
+                  LastKnownName="Coletar valor do produto e valor pago"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="83643fa7-13dc-4ee3-bdfb-cc7303396641"
+        name="Usuário comum"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="fd01f972-f4c7-4b71-a045-7ffda815c666"
+            isDerived="false"
+            sourceEndRoleName="Usuário comum"
+            targetEndRoleName="Informa o valor do produto"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ec6b6288-a72c-460e-9c0e-800a24a501d0"
+              LastKnownName="Informa o valor do produto"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="046b762f-139d-46f9-ad69-d1e42175c696"
+                  name="Usuário comum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8a4d49c-1a12-4d9a-bdfd-11fc77b701f5"
+                  name="Informa o valor do produto"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="23596534-a3ae-4db7-9feb-15ac3d641919"
+            isDerived="false"
+            sourceEndRoleName="Usuário comum"
+            targetEndRoleName="Informa o valor pago"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e1131684-e575-42d6-b981-7d7d46f28322"
+              LastKnownName="Informa o valor pago"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8f666c51-6c6d-4923-ae4b-7951d2cadb1d"
+                  name="Usuário comum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="49f6f5a6-f184-4f47-a6de-08cd5a241d43"
+                  name="Informa o valor pago"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ec6b6288-a72c-460e-9c0e-800a24a501d0"
+        name="Informa o valor do produto"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e1131684-e575-42d6-b981-7d7d46f28322"
+        name="Informa o valor pago"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="120772f6-f98a-4dc9-a76f-17bfc8fc6a08"
+        name="Sistema calcula e fornece o troco "
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="ff1ab0d5-ad51-4d3e-821f-9d3cbea544cd">
+            <useCaseMoniker
+              Id="a7263ec4-c25a-4644-9ffc-df31ee70c4ba"
+              LastKnownName="Validar dados recebidos"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="bd0f6a5d-3505-4071-bddd-b23a2eb083b9"
+            isDerived="false"
+            sourceEndRoleName="Sistema calcula e fornece o troco "
+            targetEndRoleName="Usuário comum"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="83643fa7-13dc-4ee3-bdfb-cc7303396641"
+              LastKnownName="Usuário comum"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="50219bff-45df-4603-8d67-09f1f2a4af92"
+                  name="Sistema calcula e fornece o troco "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a7ba6345-3278-4d91-9369-47c632573905"
+                  name="Usuário comum"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a7263ec4-c25a-4644-9ffc-df31ee70c4ba"
+        name="Validar dados recebidos"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+        name="AbstractProcessor"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="4efcf37c-1983-460a-9e53-a6533f62b137">
+            <interfaceMoniker
+              Id="1075c0e2-f03a-4d98-9d8b-767675de461b"
+              LastKnownName="IProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="555ec994-5579-4c53-b639-95b0660949d3"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f27abb47-7ada-488a-973a-be7255fdf07f"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5ee725ad-bad9-45c3-82e1-ec1b8c34e9ba"
+            name="Calculate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4d737b13-8762-42d8-b1ad-b50ce50b4b9b"
+                  name="changeAmount"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1fbad547-1465-41a0-86d1-5e89acbcf0d9"
+                      LastKnownName="long"
+                      LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="1075c0e2-f03a-4d98-9d8b-767675de461b"
+        name="IProcessor"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="89bc4b97-1a10-46bc-8eff-1ff4b435d952"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="48a5a245-3c04-4c4d-99ac-2f2565ede47b"
+        name="Class2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8136c85f-3023-4ef4-bfe1-694ac1d58142"
+        name="Class3"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2079e721-87e6-43d7-9096-44f04ac174ea"
+        name="Class4"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c88f63cf-53fa-48f9-bac8-a3443536ee08"
+        name="CoinProcessor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="4c39be21-65cf-40ea-906c-6caffe5b5dde"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+              LastKnownName="AbstractProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8f7dc758-d4ee-4f58-9a64-4df0b893d0cf"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5ef41eca-7974-40c3-89be-62eb180df45c"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5706eb6a-c486-473a-ac1b-1f659f4aee57"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="323e24a5-675d-43f1-a7a9-91b8b820ecba"
+        name="Class5"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1fbad547-1465-41a0-86d1-5e89acbcf0d9"
+        name="long" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2a7796d9-dde3-4e3f-83b3-3ac77f70afcc"
+        name="BillProcessor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="b22e9e23-6bfb-4f2b-b22f-6d2bfcf7880a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+              LastKnownName="AbstractProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cb05109b-7aa1-4781-928a-18b7643158a0"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ef20d326-bb46-40d3-b68b-43eec99b7851"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c7fe4bfa-5e46-48d1-9241-b82468fc82e4"
+        name="SilverProcessor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="dbb71e92-d8ac-43f6-9dfd-0a4326014ba7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+              LastKnownName="AbstractProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="011d42eb-34be-44b1-945b-0212c40a7a1e"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="df78be4f-2603-4210-9b27-e125a79310b6"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="716f0bf1-3fcf-4992-ac18-5808b16e1733"
+        name="GoldProcessor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="0915f5a9-1ca7-43b8-b09e-76f12b0ee19d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+              LastKnownName="AbstractProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4576dc69-8f86-47b3-a293-fd61c3c23cb0"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0b122a6b-02ab-4f5c-a7c0-18eb71b5e6f1"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="08341a06-3a28-48a5-91bd-aa3189e3a4a5"
+        name="CandyProcessor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="442d6395-4146-4d72-a6ec-1f04f1d1acf9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bd10e48a-a4db-4d79-a034-bd1a168170e9"
+              LastKnownName="AbstractProcessor"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="503ebb51-6947-4070-a230-2d97bd3c2ec4"
+            name="GetName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5f1483a4-cf16-476f-b24b-470b2e77a9c1"
+            name="GetAvailableValues"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b706e47d-60af-4f90-a6c1-0ae8c91a8164"
+        name="CadeMeuTrocoManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f6651f9c-4a42-48f9-8c26-ce45e70e8316"
+            isDerived="false"
+            sourceEndRoleName="CadeMeuTrocoManager"
+            targetEndRoleName="ILog"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="d5461ce2-08d5-4509-ace1-c29b86cd914d"
+              LastKnownName="ILog"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="532cdb89-413d-4391-b850-d6a4d503d03d"
+                  name="CadeMeuTrocoManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b83f8444-d13d-47c4-b201-1cfdd6389552"
+                  name="ILog"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7395a29a-cf0e-48c9-b7fe-9383544fca98"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fba8bd9b-f378-4b68-8e82-29093f53b6ec"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7faa8fe0-0ec1-43a4-89bd-97f7edf9c668"
+            name="ILog"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1bb62ddc-c973-496d-8e0d-ab287185a92b"
+            name="Calculate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8d40e97e-3ede-4610-8d19-052bfa593074"
+            name="CalculateEntities"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d5461ce2-08d5-4509-ace1-c29b86cd914d"
+        name="ILog"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="cf7bcf76-2d77-463f-a628-9a9b53b0d965"
+        name="MVC"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="93d4c838-2ddf-461b-9013-193e8e1737ab">
+            <componentMoniker
+              Id="3801356e-19c3-4c7f-b638-e5e846b87b5b"
+              LastKnownName="Serviço"
+              LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <part
+            Id="662a2432-9e4f-413c-8b0c-7a7310417b65"
+            name="WebAPI"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="Composite"
+            isComposite="true">
+            <type_NamedElement>
+              <componentMoniker
+                Id="2822456f-4ac1-459b-bcc2-d6739e0f1c7f"
+                LastKnownName="Component1"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </part>
+          <requiredInterface
+            Id="68dd3046-2f2b-4a15-ae25-29a54796074b"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="1c08bb04-dc57-418e-86b0-146071a32e18">
+                <providedInterfaceMoniker
+                  Id="0a35e141-3768-4694-aa57-1a68f03250dd"
+                  LastKnownName="Port2"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="93056c44-0326-4df5-b1c0-a385b2df0d2b"
+                LastKnownName="NET.TCP"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="3801356e-19c3-4c7f-b638-e5e846b87b5b"
+        name="Serviço"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="2822456f-4ac1-459b-bcc2-d6739e0f1c7f"
+        name="Component1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="77b90d20-1f9e-4004-8d14-feb484b1a0e0"
+        name="GlobalIdentitySevice (WCF)"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="488de625-593b-48ca-b934-5b8e980e3ab3"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="b5c6f3a5-d0ab-4dd6-9193-6d343f1e3b24"
+                LastKnownName="Soap"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface
+            Id="0a35e141-3768-4694-aa57-1a68f03250dd"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="7086f74d-1c42-4d02-b719-a32d4309bc69"
+                LastKnownName="NET.TCP"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface
+            Id="26561564-d311-4cb1-8600-e3c96e872c29"
+            name="Port3"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <suppliersInternal>
+              <dependency
+                Id="924cb4ab-5747-4418-8a94-220117f31d74">
+                <providedInterfaceMoniker
+                  Id="b9c37aa4-673c-46aa-a690-bd6e82afb88b"
+                  LastKnownName="Port1"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="b2365606-a99d-4d53-826b-077f09fe81a2"
+                LastKnownName="SQL"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="7c703976-82c7-4d81-abc3-b47522a2ea34"
+        name="Banco de dados de usuários"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="b9c37aa4-673c-46aa-a690-bd6e82afb88b"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="7f92ea59-cfc5-4039-bed2-bdedea63ce42"
+                LastKnownName="SQL"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b5c6f3a5-d0ab-4dd6-9193-6d343f1e3b24"
+        name="Soap"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="7086f74d-1c42-4d02-b719-a32d4309bc69"
+        name="NET.TCP"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="93056c44-0326-4df5-b1c0-a385b2df0d2b"
+        name="NET.TCP"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6786d384-21a7-46c7-9f90-c8496a0487cf"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="7f92ea59-cfc5-4039-bed2-bdedea63ce42"
+        name="SQL"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b2365606-a99d-4d53-826b-077f09fe81a2"
+        name="SQL"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="2f557cce-5ef2-4636-b9cc-5a03c9ce6098"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="76d7570a-cdd4-49f7-bc1b-d90d0e893efc"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="6e51f821-8933-4c66-bbb8-bac0687ea8d0"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="fa289022-b21f-46ce-bbb7-1ed5f9397845"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ecb04681-16dc-44a1-9123-417b59d0aa63"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="5700f914-c17a-4c30-9474-d2c7fb3f6e44"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f67deef5-587b-4e62-bd2c-aad102374de5"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4283e855-0e66-44cd-9b42-2bf26f981e72"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="fa289022-b21f-46ce-bbb7-1ed5f9397845"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d1b91a0f-9052-4d84-8a3a-58e13e7f0e63"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4402d509-5cc4-4e53-a590-f9daedce05a4"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ecb04681-16dc-44a1-9123-417b59d0aa63"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="e2a5211a-5e93-4654-92fd-f272ed2ad15c"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="b9c63dc9-7e2b-4109-945a-ec66c0c93bca"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="a6a0a6cb-b0d3-4d84-bcfb-b6f1f8ef05c2"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="1fbacae6-a9d9-4dc6-9cfd-c410882061be"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c920a110-1ead-4235-b564-c1886252fbfc"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="a6a0a6cb-b0d3-4d84-bcfb-b6f1f8ef05c2"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="1dc24285-1117-4070-841d-0f7db350c087"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5700f914-c17a-4c30-9474-d2c7fb3f6e44"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1fbacae6-a9d9-4dc6-9cfd-c410882061be"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c920a110-1ead-4235-b564-c1886252fbfc"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f67deef5-587b-4e62-bd2c-aad102374de5"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="b9c63dc9-7e2b-4109-945a-ec66c0c93bca"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9816912a-82fc-4902-ae8c-5e2a5b0e1bcd"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7972cab9-21fc-48f9-8823-250a3b552025"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4283e855-0e66-44cd-9b42-2bf26f981e72"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="6e51f821-8933-4c66-bbb8-bac0687ea8d0"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2082da2f-c645-4f86-9e63-8f487a73b720"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4c777ac9-5b07-487b-9427-91a666a3f772"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="909abaec-c263-4ff1-b984-289e105d827a"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f89045ce-967c-4515-88f6-34bcad834276"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="9e0d99a5-31da-481a-9267-6682618ea24b"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5bca9686-7377-4b4f-96da-2f0a7c2c3706"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="9e0d99a5-31da-481a-9267-6682618ea24b"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3a74e9cd-d896-4f36-896b-fabf7b45b269"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5bca9686-7377-4b4f-96da-2f0a7c2c3706"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f89045ce-967c-4515-88f6-34bcad834276"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="69f9447e-1aa2-484f-bd4c-f7862038c0d8"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="606ca62a-0cee-4c2c-b132-775245a1a69f"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="fbf148ae-a3ca-4fe9-a0cd-1be4a3460f1b"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="70ee7973-2743-46c4-b7a6-615898c3d216"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="e8cb4890-6bfb-478f-a28c-ffa424e837ca"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="df5ac2b7-2e64-4fa0-b66c-9fd6a2c2d565"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="536b17f1-cf83-415c-a3a5-d7157dc2a4fd"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9e9b10da-b07e-409b-a949-2e1fa01186ca"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="70ee7973-2743-46c4-b7a6-615898c3d216"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="556f655e-35d2-4755-9c71-800c0da258ab"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7c6136de-4fe6-433e-93f9-c16e75725e76"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e8cb4890-6bfb-478f-a28c-ffa424e837ca"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="6d566fa9-2e77-4faf-b1ce-75b42f0ddda8"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f7c92a6b-c6ca-4493-a8e4-3cfb9454e110"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="fa68cfb6-eb7a-4a41-b0b3-1636338275eb"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ef52924e-0f0a-4fce-86eb-d6c0ab6ef2b6"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="02d1f410-655b-4c8b-a22b-eb455c39af2e"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="fa68cfb6-eb7a-4a41-b0b3-1636338275eb"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9119121d-2c4f-467d-82c7-1b91354b8a15"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ef52924e-0f0a-4fce-86eb-d6c0ab6ef2b6"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="df5ac2b7-2e64-4fa0-b66c-9fd6a2c2d565"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="02d1f410-655b-4c8b-a22b-eb455c39af2e"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="536b17f1-cf83-415c-a3a5-d7157dc2a4fd"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f7c92a6b-c6ca-4493-a8e4-3cfb9454e110"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="64716239-2724-4830-b87b-4c3e25afd3d3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4e7a45b7-f429-4e61-ade6-ed8da37ebb7f"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9e9b10da-b07e-409b-a949-2e1fa01186ca"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="fbf148ae-a3ca-4fe9-a0cd-1be4a3460f1b"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4ac2bacf-01d6-4aea-8499-d35dd99f77cd"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+                LastKnownName="Factory"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="435ad902-1c2a-407e-8b5a-9fcef8b9027b"
+            name="BehaviorExecutionSpecification10">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="a330a98b-4e56-4f24-82de-b8a3d105b1bc"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="59891a78-2f4f-4a42-97b5-e5e6a94b49cf"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="9104e60b-7c55-4502-82c4-3301825eeae6"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f35a9105-a573-4328-aefd-5ecef0432b7a"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="59891a78-2f4f-4a42-97b5-e5e6a94b49cf"
+            name="ExecutionOccurrenceSpecification19">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0fc8bcd2-111b-498b-a01e-3550e3eee6c9"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9104e60b-7c55-4502-82c4-3301825eeae6"
+            name="MessageOccurrenceSpecification36">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c7c24916-e722-4751-8ea0-389a88775847"
+            name="MessageOccurrenceSpecification35">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3b365be5-997b-43f3-a848-c5df5bad31da"
+            name="MessageOccurrenceSpecification38">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f35a9105-a573-4328-aefd-5ecef0432b7a"
+            name="MessageOccurrenceSpecification37">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="a330a98b-4e56-4f24-82de-b8a3d105b1bc"
+            name="ExecutionOccurrenceSpecification20">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="568a60fc-6153-4739-b06e-f1f18a4d5fbe"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="03329740-5fd1-4006-904e-d9aa1bbf5817"
+            name="BehaviorExecutionSpecification11">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8efc1f07-467c-46b6-a49b-5369f554d3b0"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f96bc1f5-364b-48b5-a884-9571e933251d"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="de3eba06-6657-4c1c-918d-5a21f93ad151"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="04c34a9f-d64c-4fc5-bc03-b0890274a615"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f96bc1f5-364b-48b5-a884-9571e933251d"
+            name="ExecutionOccurrenceSpecification21">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fa28fa06-586f-4c9b-8def-b4ef312c359a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="efa8a465-4ca6-4d57-abef-99a797a89ca3"
+            name="MessageOccurrenceSpecification39">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="de3eba06-6657-4c1c-918d-5a21f93ad151"
+            name="MessageOccurrenceSpecification40">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="04c34a9f-d64c-4fc5-bc03-b0890274a615"
+            name="MessageOccurrenceSpecification41">
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="212a2a74-79bf-479e-a795-d8f1f213f460"
+            name="MessageOccurrenceSpecification42">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8efc1f07-467c-46b6-a49b-5369f554d3b0"
+            name="ExecutionOccurrenceSpecification22">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c3f70492-3b0a-4845-8b30-dee1a14a0c5f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+                LastKnownName="Processor"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="bbeec6b6-5c6b-4cf3-9417-b8a4543d8641"
+            name="BehaviorExecutionSpecification12">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8a04f596-1113-4aa2-8bb3-5380e9fa8267"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f95d758d-72af-4157-8881-b7b05a44ce5d"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="753f9479-571f-472e-9ce9-56035a37248d"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="077e11bc-7285-46d4-bee2-ee6ebddc0597"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1cc76fc2-d022-45fb-b207-c429de152c40"
+                LastKnownName="MessageOccurrenceSpecification50"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9b564797-5722-46ba-aabe-a5eb036dcd45"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f95d758d-72af-4157-8881-b7b05a44ce5d"
+            name="ExecutionOccurrenceSpecification23">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="7d2a03be-521a-403f-bc82-4aaa75ca26e3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fa65d940-c3cd-46da-ac85-b0aaf81a260c"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="753f9479-571f-472e-9ce9-56035a37248d"
+            name="MessageOccurrenceSpecification44">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="f8794a2c-ccb9-4b45-93e3-5c1efb51f344"
+            name="BehaviorExecutionSpecification13">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f10b11f8-8b17-4e33-8970-2fd6bef31722"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="e489d4f1-3fe8-4cd9-9cea-68ea8f25c6c1"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7e9885cd-b5db-44f2-b145-dc1a9db52911"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="dc20672f-9a10-4b46-8834-43c908c41597"
+                LastKnownName="MessageOccurrenceSpecification49"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="e489d4f1-3fe8-4cd9-9cea-68ea8f25c6c1"
+            name="ExecutionOccurrenceSpecification25">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2e927634-3d5d-44d7-952a-7ced197b20fb"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="077e11bc-7285-46d4-bee2-ee6ebddc0597"
+            name="MessageOccurrenceSpecification47">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7e9885cd-b5db-44f2-b145-dc1a9db52911"
+            name="MessageOccurrenceSpecification48">
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="dc20672f-9a10-4b46-8834-43c908c41597"
+            name="MessageOccurrenceSpecification49">
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1cc76fc2-d022-45fb-b207-c429de152c40"
+            name="MessageOccurrenceSpecification50">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f10b11f8-8b17-4e33-8970-2fd6bef31722"
+            name="ExecutionOccurrenceSpecification26">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="347ef0b5-074c-4017-8a33-3eb4258f1397"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+                LastKnownName="Repository"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9b564797-5722-46ba-aabe-a5eb036dcd45"
+            name="MessageOccurrenceSpecification45">
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a8120506-107c-433b-b2ab-22f618105c0d"
+            name="MessageOccurrenceSpecification46">
+            <covered>
+              <lifelineMoniker
+                Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8a04f596-1113-4aa2-8bb3-5380e9fa8267"
+            name="ExecutionOccurrenceSpecification24">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ce3eaac2-d9a8-4278-84ab-ea3efbfcabb9"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9a2df409-2dcb-410d-8a01-14726487a790"
+                LastKnownName="Log"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="d74c7b60-439a-4eaf-95db-b7fdad3e7d0d"
+            name="CadeMeuTrocoManager"
+            isActor="false"
+            lifelineDisplayName="CadeMeuTrocoManager">
+            <represents>
+              <propertyMoniker
+                Id="4ac8ae04-e933-47ce-a93c-013e2439c84c"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="4402d509-5cc4-4e53-a590-f9daedce05a4"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7972cab9-21fc-48f9-8823-250a3b552025"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4c777ac9-5b07-487b-9427-91a666a3f772"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="9e0d99a5-31da-481a-9267-6682618ea24b"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f89045ce-967c-4515-88f6-34bcad834276"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="7c6136de-4fe6-433e-93f9-c16e75725e76"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4e7a45b7-f429-4e61-ade6-ed8da37ebb7f"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c7c24916-e722-4751-8ea0-389a88775847"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3b365be5-997b-43f3-a848-c5df5bad31da"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="efa8a465-4ca6-4d57-abef-99a797a89ca3"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="212a2a74-79bf-479e-a795-d8f1f213f460"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="fa65d940-c3cd-46da-ac85-b0aaf81a260c"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a8120506-107c-433b-b2ab-22f618105c0d"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5ecf4b29-1cdf-4516-a9cb-c19bdf64ebb2"
+            name="Factory"
+            isActor="false"
+            lifelineDisplayName="Factory">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="70ee7973-2743-46c4-b7a6-615898c3d216"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="fbf148ae-a3ca-4fe9-a0cd-1be4a3460f1b"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="9ec9a302-a0ff-4068-bf01-8f29d3275d7f"
+            name="Processor"
+            isActor="false"
+            lifelineDisplayName="Processor">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="fa68cfb6-eb7a-4a41-b0b3-1636338275eb"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f7c92a6b-c6ca-4493-a8e4-3cfb9454e110"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="59891a78-2f4f-4a42-97b5-e5e6a94b49cf"
+                LastKnownName="ExecutionOccurrenceSpecification19"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="a330a98b-4e56-4f24-82de-b8a3d105b1bc"
+                LastKnownName="ExecutionOccurrenceSpecification20"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f96bc1f5-364b-48b5-a884-9571e933251d"
+                LastKnownName="ExecutionOccurrenceSpecification21"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8efc1f07-467c-46b6-a49b-5369f554d3b0"
+                LastKnownName="ExecutionOccurrenceSpecification22"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="9a2df409-2dcb-410d-8a01-14726487a790"
+            name="Log"
+            isActor="false"
+            lifelineDisplayName="Log">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="fa289022-b21f-46ce-bbb7-1ed5f9397845"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="6e51f821-8933-4c66-bbb8-bac0687ea8d0"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f95d758d-72af-4157-8881-b7b05a44ce5d"
+                LastKnownName="ExecutionOccurrenceSpecification23"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8a04f596-1113-4aa2-8bb3-5380e9fa8267"
+                LastKnownName="ExecutionOccurrenceSpecification24"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="415a8a0e-8e64-4a11-a704-7fe3a64d8d5e"
+            name="Repository"
+            isActor="false"
+            lifelineDisplayName="Repository">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="a6a0a6cb-b0d3-4d84-bcfb-b6f1f8ef05c2"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="b9c63dc9-7e2b-4109-945a-ec66c0c93bca"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="e489d4f1-3fe8-4cd9-9cea-68ea8f25c6c1"
+                LastKnownName="ExecutionOccurrenceSpecification25"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f10b11f8-8b17-4e33-8970-2fd6bef31722"
+                LastKnownName="ExecutionOccurrenceSpecification26"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="78194a37-fdf3-430d-bbe5-3fe436c6481c"
+            name="SaveLog(Request)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4402d509-5cc4-4e53-a590-f9daedce05a4"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ecb04681-16dc-44a1-9123-417b59d0aa63"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c9635fae-79ef-48ca-a6b7-6888363be8e5"
+            name="Save"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5700f914-c17a-4c30-9474-d2c7fb3f6e44"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1fbacae6-a9d9-4dc6-9cfd-c410882061be"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="aa6989f0-a954-4aec-95cf-f7b68ab56e87"
+            name="Success"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c920a110-1ead-4235-b564-c1886252fbfc"
+                LastKnownName="MessageOccurrenceSpecification23"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f67deef5-587b-4e62-bd2c-aad102374de5"
+                LastKnownName="MessageOccurrenceSpecification24"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="770836dc-4ad1-4fe1-b13b-54069d3b07f7"
+            name="Success"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4283e855-0e66-44cd-9b42-2bf26f981e72"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7972cab9-21fc-48f9-8823-250a3b552025"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="e0886e69-c3cf-4ce9-97b3-c9c2bdf60c32"
+            name="Validação"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4c777ac9-5b07-487b-9427-91a666a3f772"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5bca9686-7377-4b4f-96da-2f0a7c2c3706"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="934d12f5-a252-4358-9ca4-424f8f3c103c"
+            name="Create"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7c6136de-4fe6-433e-93f9-c16e75725e76"
+                LastKnownName="MessageOccurrenceSpecification27"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e8cb4890-6bfb-478f-a28c-ffa424e837ca"
+                LastKnownName="MessageOccurrenceSpecification28"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6d762e81-bf5e-4106-96f2-d9d02106a996"
+            name="GetAvaiableValues"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="df5ac2b7-2e64-4fa0-b66c-9fd6a2c2d565"
+                LastKnownName="MessageOccurrenceSpecification31"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ef52924e-0f0a-4fce-86eb-d6c0ab6ef2b6"
+                LastKnownName="MessageOccurrenceSpecification32"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="357f28ad-513c-4025-9475-7e3e8d2b474f"
+            name="AvaiableValues"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="02d1f410-655b-4c8b-a22b-eb455c39af2e"
+                LastKnownName="MessageOccurrenceSpecification33"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="536b17f1-cf83-415c-a3a5-d7157dc2a4fd"
+                LastKnownName="MessageOccurrenceSpecification34"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="82e2b88f-ea9d-4412-9b74-7b336b99d665"
+            name="Processor"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9e9b10da-b07e-409b-a949-2e1fa01186ca"
+                LastKnownName="MessageOccurrenceSpecification29"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4e7a45b7-f429-4e61-ade6-ed8da37ebb7f"
+                LastKnownName="MessageOccurrenceSpecification30"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="65c674e3-befd-429c-99b5-37bbb51235fa"
+            name="Calculate"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c7c24916-e722-4751-8ea0-389a88775847"
+                LastKnownName="MessageOccurrenceSpecification35"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9104e60b-7c55-4502-82c4-3301825eeae6"
+                LastKnownName="MessageOccurrenceSpecification36"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="8cd6a1e6-4df5-44c5-8dea-c49826e0daa7"
+            name="ChangeData"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f35a9105-a573-4328-aefd-5ecef0432b7a"
+                LastKnownName="MessageOccurrenceSpecification37"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3b365be5-997b-43f3-a848-c5df5bad31da"
+                LastKnownName="MessageOccurrenceSpecification38"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="df573e65-3ba0-4a3c-8224-5c37d1219859"
+            name="GetName"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="efa8a465-4ca6-4d57-abef-99a797a89ca3"
+                LastKnownName="MessageOccurrenceSpecification39"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="de3eba06-6657-4c1c-918d-5a21f93ad151"
+                LastKnownName="MessageOccurrenceSpecification40"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="04e07f49-91aa-4255-8708-0838e03716c4"
+            name="string name"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="04c34a9f-d64c-4fc5-bc03-b0890274a615"
+                LastKnownName="MessageOccurrenceSpecification41"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="212a2a74-79bf-479e-a795-d8f1f213f460"
+                LastKnownName="MessageOccurrenceSpecification42"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="94872528-18ba-4488-b467-bae05094135d"
+            name="SaveLog(Response)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="fa65d940-c3cd-46da-ac85-b0aaf81a260c"
+                LastKnownName="MessageOccurrenceSpecification43"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="753f9479-571f-472e-9ce9-56035a37248d"
+                LastKnownName="MessageOccurrenceSpecification44"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="68cb9fd8-dea4-4db5-a6cf-b92f85820cdd"
+            name="Save"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="077e11bc-7285-46d4-bee2-ee6ebddc0597"
+                LastKnownName="MessageOccurrenceSpecification47"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7e9885cd-b5db-44f2-b145-dc1a9db52911"
+                LastKnownName="MessageOccurrenceSpecification48"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="4d37352f-e0c9-4160-a795-74a6b55db627"
+            name="Success"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="dc20672f-9a10-4b46-8834-43c908c41597"
+                LastKnownName="MessageOccurrenceSpecification49"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1cc76fc2-d022-45fb-b207-c429de152c40"
+                LastKnownName="MessageOccurrenceSpecification50"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="90943c1d-724d-41c9-bfcd-b3aaf0d6758e"
+            name="Success"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9b564797-5722-46ba-aabe-a5eb036dcd45"
+                LastKnownName="MessageOccurrenceSpecification45"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a8120506-107c-433b-b2ab-22f618105c0d"
+                LastKnownName="MessageOccurrenceSpecification46"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="39ec5acb-c323-4a1f-b1b4-c78eabb78d8d"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="b706e47d-60af-4f90-a6c1-0ae8c91a8164"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4ac8ae04-e933-47ce-a93c-013e2439c84c"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="b706e47d-60af-4f90-a6c1-0ae8c91a8164"
+                LastKnownName="CadeMeuTrocoManager"
+                LastKnownLocation="CadeMeuTroco.Moelin.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d1b91a0f-9052-4d84-8a3a-58e13e7f0e63"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2082da2f-c645-4f86-9e63-8f487a73b720"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="1dc24285-1117-4070-841d-0f7db350c087"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9816912a-82fc-4902-ae8c-5e2a5b0e1bcd"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3a74e9cd-d896-4f36-896b-fabf7b45b269"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="69f9447e-1aa2-484f-bd4c-f7862038c0d8"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="556f655e-35d2-4755-9c71-800c0da258ab"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4ac2bacf-01d6-4aea-8499-d35dd99f77cd"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9119121d-2c4f-467d-82c7-1b91354b8a15"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="64716239-2724-4830-b87b-4c3e25afd3d3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0fc8bcd2-111b-498b-a01e-3550e3eee6c9"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="568a60fc-6153-4739-b06e-f1f18a4d5fbe"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fa28fa06-586f-4c9b-8def-b4ef312c359a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c3f70492-3b0a-4845-8b30-dee1a14a0c5f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="7d2a03be-521a-403f-bc82-4aaa75ca26e3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ce3eaac2-d9a8-4278-84ab-ea3efbfcabb9"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2e927634-3d5d-44d7-952a-7ced197b20fb"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="347ef0b5-074c-4017-8a33-3eb4258f1397"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CadeMeuTroco.Core;
 using CadeMeuTroco.Core.DataContracts;
+using CadeMeuTroco.Core.Repository.Entities;
+using CadeMeuTroco.Core.Util;
 
 namespace CadeMeuTroco {
     public partial class Form1 : Form {
@@ -24,6 +26,7 @@ namespace CadeMeuTroco {
         private void Calculate() {
             this.UxTxtProcessorResult.Clear();
             this.UxTxtResult.Clear();
+                      
 
             long productAmount = Convert.ToInt64(this.UxTxtProductValue.Text);
             long paidAmount = Convert.ToInt64(this.UxTxtPaidValue.Text);
@@ -36,6 +39,11 @@ namespace CadeMeuTroco {
 
             request.PaidAmountInCents = paidAmount;
             request.ProductAmountInCents = productAmount;
+
+
+            ILog log = new FileLog();
+
+            log.Save("Calculate", "IT'S DONE MOTHERFUCKER!", CategoryType.Exception);
 
             CalculateResponse response = manager.Calculate(request);
 

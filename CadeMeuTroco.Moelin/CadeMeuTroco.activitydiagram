@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ad1b3c55-1c36-4b15-86d7-3a271b5a159d" name="CadeMeuTroco" linkedPackageId="b6aba626-0681-4e97-8cab-cd63e89939b9" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="81dffb21-9103-4727-a88e-88173c84a672">
+      <elementDefinition Id="fb04e77c-0813-44fd-a4ba-01fc12dae01d" />
+      <body>Utilizar Factory</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="e0d5252e-3ebf-45fe-8c44-bb50eb784239" LastKnownName="Selecionar o processador adequado para realizar o troco" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="1b490ff2-94fa-4b5d-bdaa-d83fea2feed6">
+      <profileInstance Id="54a9298b-0650-4e46-bd00-1f375b23b0c1" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="045f4246-48af-42a6-bab8-03b557fb318c">
+      <profileInstance Id="a2ac4c48-6deb-4001-a8d7-efb40097833c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="130b2062-917f-4ce8-857f-8a88f551799f" name="CadeMeuTroco" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="735ab814-6a0d-4c35-918a-61e2f9dd4ed2" />
+        <nodes>
+          <opaqueAction Id="35d4fc9b-ee93-4c98-b39e-da9b0879dec7" name="Coletar valor do produto e valor pago" isLeaf="false">
+            <elementDefinition Id="75e863ca-548c-41c3-ac79-43cafcdf830a" />
+            <flowNodeTargets>
+              <controlFlow Id="8b0e7703-2b40-4ca5-9356-03c4c0e089d8" isLeaf="false">
+                <opaqueActionMoniker Id="41cc4e4a-2085-41fb-b886-c33db4bb2360" LastKnownName="Calcular o valor do troco" />
+                <elementDefinition Id="f135f663-7826-433d-a910-333b37dacb21" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="41cc4e4a-2085-41fb-b886-c33db4bb2360" name="Calcular o valor do troco" isLeaf="false">
+            <elementDefinition Id="c189dd5b-905f-488a-a31e-20077b215771" />
+            <flowNodeTargets>
+              <controlFlow Id="040ca5b9-e531-4b1c-98a4-0f968646dc2a" isLeaf="false">
+                <decisionNodeMoniker Id="d7fc6b99-e43d-4057-ae5a-0923e454faec" LastKnownName="Decision3" />
+                <elementDefinition Id="454b430d-5a82-4854-9575-6f95ff6506c0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e0d5252e-3ebf-45fe-8c44-bb50eb784239" name="Selecionar o processador adequado para realizar o troco" isLeaf="false">
+            <elementDefinition Id="7f6463ba-7085-4698-b690-7471faa8b068" />
+            <flowNodeTargets>
+              <controlFlow Id="39768074-7010-40d5-9ea0-923a8d7ac9e7" isLeaf="false">
+                <opaqueActionMoniker Id="ea393e3c-58cd-4cd8-b9b5-5c76786784e5" LastKnownName="Verificar se encontrou um processador" />
+                <elementDefinition Id="2b32b692-ec74-4404-a99a-0df46798f898" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a56e9ef3-8897-4fe7-af27-e5c6a5220c5f" name="Executar o processador selecionado para calcular o troco atual" isLeaf="false">
+            <elementDefinition Id="02538115-e537-45c5-bd53-5a19c32dae95" />
+            <flowNodeTargets>
+              <controlFlow Id="1f3e2e14-2b97-4eec-b5ff-0db186f173cd" isLeaf="false">
+                <opaqueActionMoniker Id="4cfb1226-4aa8-416f-9d70-4a0c306b5bf5" LastKnownName="Subtrair o troco atual do valor retornado pelo processador" />
+                <elementDefinition Id="30c12039-bae9-43c1-8ebb-526526287a46" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4cfb1226-4aa8-416f-9d70-4a0c306b5bf5" name="Subtrair o troco atual do valor retornado pelo processador" isLeaf="false">
+            <elementDefinition Id="1157d61e-66a5-411d-98d7-c00436f2581e" />
+            <flowNodeTargets>
+              <controlFlow Id="b0d41ea8-ff3b-4c64-9086-3b626131325c" isLeaf="false">
+                <opaqueActionMoniker Id="a1340f53-17e2-4cd7-9704-1b022ecb8f98" LastKnownName="Verificar se o troco restante é zero" />
+                <elementDefinition Id="207f207c-9845-4bbf-8d43-6df102eeb35c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a1340f53-17e2-4cd7-9704-1b022ecb8f98" name="Verificar se o troco restante é zero" isLeaf="false">
+            <elementDefinition Id="ea23478d-21af-4094-94d3-1dd3f5df15aa" />
+            <flowNodeTargets>
+              <controlFlow Id="5c54823b-1a04-46f9-bfc4-bfdbe16e090e" isLeaf="false">
+                <decisionNodeMoniker Id="a80ac0d6-8e97-4468-a04d-4043ec6e457c" LastKnownName="Decision1" />
+                <elementDefinition Id="64d16bc8-a2fa-4cac-82ac-0702e174f716" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a3835c07-bd4f-4c46-b28c-3072854c1b12" name="Retornar os dados processados" isLeaf="false">
+            <elementDefinition Id="ba76a40f-4eab-4d5c-8845-60ea7ff2966d" />
+            <flowNodeTargets>
+              <controlFlow Id="efaf7712-7766-4f54-baa5-0e00611104be" isLeaf="false">
+                <activityFinalNodeMoniker Id="4494978e-673f-4156-aff0-ef9ce6fc1387" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="7b8299d0-afdf-43a1-96e4-fc6097dd1684" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a80ac0d6-8e97-4468-a04d-4043ec6e457c" name="Decision1" isLeaf="false">
+            <elementDefinition Id="544e8bd2-750f-4919-bebd-ddc42336d90f" />
+            <flowNodeTargets>
+              <controlFlow Id="c2f630b5-b62b-4069-bd34-40029082bf4e" guard="Troco diferente de zero" isLeaf="false">
+                <opaqueActionMoniker Id="e0d5252e-3ebf-45fe-8c44-bb50eb784239" LastKnownName="Selecionar o processador adequado para realizar o troco" />
+                <elementDefinition Id="8f8b1875-2ece-4459-a115-0e257d51af93" />
+              </controlFlow>
+              <controlFlow Id="2e7d0369-7c0a-4e1e-850b-2d24b111c57c" guard="Troco é zero" isLeaf="false">
+                <opaqueActionMoniker Id="a3835c07-bd4f-4c46-b28c-3072854c1b12" LastKnownName="Retornar os dados processados" />
+                <elementDefinition Id="df8ac104-4fb2-41f4-bf61-b734272aad40" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="4494978e-673f-4156-aff0-ef9ce6fc1387" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="79bb799c-8ae2-4780-bd84-d7d5b75058c3" />
+          </activityFinalNode>
+          <opaqueAction Id="ea393e3c-58cd-4cd8-b9b5-5c76786784e5" name="Verificar se encontrou um processador" isLeaf="false">
+            <elementDefinition Id="7472e9e5-0ca4-4035-835c-3a55f9f413d3" />
+            <flowNodeTargets>
+              <controlFlow Id="f580b4a9-cab5-412f-82bd-0ce28ba88696" isLeaf="false">
+                <decisionNodeMoniker Id="4250b247-1079-401e-94ef-296687f1bf49" LastKnownName="Decision2" />
+                <elementDefinition Id="e1ada83a-ef1c-45fb-bfe2-0b05a95934c4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="4250b247-1079-401e-94ef-296687f1bf49" name="Decision2" isLeaf="false">
+            <elementDefinition Id="664ae97b-866c-4b2f-8694-b39ac75f15e7" />
+            <flowNodeTargets>
+              <controlFlow Id="aba00058-a5fe-42aa-abb0-5bb671e2ae2c" guard="Encontrou um processador" isLeaf="false">
+                <opaqueActionMoniker Id="a56e9ef3-8897-4fe7-af27-e5c6a5220c5f" LastKnownName="Executar o processador selecionado para calcular o troco atual" />
+                <elementDefinition Id="10afe366-f8a4-40b5-b3fd-d07794a5864b" />
+              </controlFlow>
+              <controlFlow Id="48ef658c-5125-4a31-ae8a-b784b6c26838" guard="Não encontrou processador" isLeaf="false">
+                <activityFinalNodeMoniker Id="6b37126a-2086-4706-9622-58ecc88c510a" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="0dd3ef0a-c0b5-4cb4-ba0c-b8ac5950bd43" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="6b37126a-2086-4706-9622-58ecc88c510a" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="ab068fbe-4db7-40f7-99c6-1555bd3f1db6" />
+          </activityFinalNode>
+          <activityFinalNode Id="0eb83289-3e63-4d14-ac94-36ccb145cd73" name="ActivityFinal3" isLeaf="false">
+            <elementDefinition Id="57715a59-1119-43bd-bd7d-1b2635f5ed3e" />
+          </activityFinalNode>
+          <decisionNode Id="d7fc6b99-e43d-4057-ae5a-0923e454faec" name="Decision3" isLeaf="false">
+            <elementDefinition Id="ac6c6626-847c-4e4c-ba97-a4e29b47f93f" />
+            <flowNodeTargets>
+              <controlFlow Id="de4eaf03-b195-497c-a2e3-50c4a44e979b" guard="Troco &gt; 0" isLeaf="false">
+                <opaqueActionMoniker Id="e0d5252e-3ebf-45fe-8c44-bb50eb784239" LastKnownName="Selecionar o processador adequado para realizar o troco" />
+                <elementDefinition Id="4efc36ba-54b7-47ea-abc9-45fdbb75a658" />
+              </controlFlow>
+              <controlFlow Id="8aaa431c-e3ae-41cd-b5de-066b05c5b3d8" guard="Troco = 0" isLeaf="false">
+                <activityFinalNodeMoniker Id="0eb83289-3e63-4d14-ac94-36ccb145cd73" LastKnownName="ActivityFinal3" />
+                <elementDefinition Id="c3c88854-db36-4bc9-91e2-282991cec3b2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <initialNode Id="0235cf9f-812e-4a3e-bd9e-de82897a76e0" name="Initial1" isLeaf="false">
+            <elementDefinition Id="6e3348ca-9a75-44bc-a6f6-152cdf62a970" />
+            <flowNodeTargets>
+              <controlFlow Id="6d137063-3781-4046-950a-9fa5315cf075" isLeaf="false">
+                <opaqueActionMoniker Id="35d4fc9b-ee93-4c98-b39e-da9b0879dec7" LastKnownName="Coletar valor do produto e valor pago" />
+                <elementDefinition Id="b3ef76c7-e9f0-40c8-b5ae-2129dd454eda" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b6aba626-0681-4e97-8cab-cd63e89939b9" name="CadeMeuTroco.Moelin">
+    <elementDefinition Id="b210f2bc-1230-4636-895b-203944b99df4" />
+  </package>
+</activityRootModel>

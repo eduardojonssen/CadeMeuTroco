@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="2fcf2957-5766-40d7-b39c-9ad739c70a02" name="UMLClassDiagram1" linkedPackageId="7038173c-0617-4ea0-a9cd-4af8e6b0ca55" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="ef6d9a57-6fa0-4348-8562-d87db5f05ac8">
+      <profileInstance Id="fa5b260d-2f23-4cb2-85b5-95fd33ae0026" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="dd12b30c-6d64-4826-88cc-45a0b31eea36">
+      <profileInstance Id="8c25f9b2-2211-438e-80f4-3d8aa27e04f9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" name="AbstractProcessor" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bd10e48a-a4db-4d79-a034-bd1a168170e9" />
+        <suppliersInternal>
+          <interfaceRealization Id="e14234f3-8d02-4c7b-bd7c-2f512d28c1b9">
+            <interfaceMoniker Id="13bab004-3c65-471b-a89a-0e7102ced7bc" LastKnownName="IProcessor" />
+            <elementDefinition Id="4efcf37c-1983-460a-9e53-a6533f62b137" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="cd8df723-c93c-4640-8919-92bf954bbda5" name="GetName" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="555ec994-5579-4c53-b639-95b0660949d3" />
+          </operation>
+          <operation Id="a18bc16d-3879-4ebf-bb3b-14f71fd9e1a5" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f27abb47-7ada-488a-973a-be7255fdf07f" />
+          </operation>
+          <operation Id="7548c03d-3775-48c7-9b8c-a627e9f92837" name="Calculate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5ee725ad-bad9-45c3-82e1-ec1b8c34e9ba" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="14960126-0f12-4df7-bd2a-13558c37df73" name="changeAmount" direction="In" isUnique="false">
+                  <elementDefinition Id="4d737b13-8762-42d8-b1ad-b50ce50b4b9b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="82c5cb3b-01bf-4c24-a6e0-c54217a24f42" LastKnownName="long" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="13bab004-3c65-471b-a89a-0e7102ced7bc" name="IProcessor" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1075c0e2-f03a-4d98-9d8b-767675de461b" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="493cd7d2-dcd7-4451-9da4-193c8bbb7097" name="CoinProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c88f63cf-53fa-48f9-bac8-a3443536ee08" />
+        <generalsInternal>
+          <generalization Id="8ea978ad-f47f-439b-8ef3-fca2226a6090" isSubstitutable="false">
+            <classMoniker Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" LastKnownName="AbstractProcessor" />
+            <elementDefinition Id="4c39be21-65cf-40ea-906c-6caffe5b5dde" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="7d996663-4cb3-4368-ad39-1796e58dc04f" name="GetName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8f7dc758-d4ee-4f58-9a64-4df0b893d0cf" />
+          </operation>
+          <operation Id="12f02516-b106-4c5f-b235-ac7017dbf710" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5ef41eca-7974-40c3-89be-62eb180df45c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="82c5cb3b-01bf-4c24-a6e0-c54217a24f42" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="1fbad547-1465-41a0-86d1-5e89acbcf0d9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="313af145-6a29-4a0e-acd3-7589f0692223" name="BillProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2a7796d9-dde3-4e3f-83b3-3ac77f70afcc" />
+        <generalsInternal>
+          <generalization Id="a363f1d6-2b04-4edc-947e-df352a6b3a60" isSubstitutable="false">
+            <classMoniker Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" LastKnownName="AbstractProcessor" />
+            <elementDefinition Id="b22e9e23-6bfb-4f2b-b22f-6d2bfcf7880a" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="e2c72a29-cabd-4d1c-9ac8-63f564a23c55" name="GetName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb05109b-7aa1-4781-928a-18b7643158a0" />
+          </operation>
+          <operation Id="1ac14fcd-7af4-4de4-aed2-15e8ce4a97d7" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ef20d326-bb46-40d3-b68b-43eec99b7851" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cf4d8a11-7ff7-49ff-97d6-d1f62dd6b5e2" name="SilverProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c7fe4bfa-5e46-48d1-9241-b82468fc82e4" />
+        <generalsInternal>
+          <generalization Id="c89ec093-1085-427d-904b-af24c6b654f5" isSubstitutable="false">
+            <classMoniker Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" LastKnownName="AbstractProcessor" />
+            <elementDefinition Id="dbb71e92-d8ac-43f6-9dfd-0a4326014ba7" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="2acb8fb3-e932-4645-966d-8d5cca2ff242" name="GetName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="011d42eb-34be-44b1-945b-0212c40a7a1e" />
+          </operation>
+          <operation Id="e0ade618-176e-4f98-b48a-ce11e8c9fba0" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="df78be4f-2603-4210-9b27-e125a79310b6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="97b2d5fa-6e8d-421a-87a8-5e8eaebea5b5" name="GoldProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="716f0bf1-3fcf-4992-ac18-5808b16e1733" />
+        <generalsInternal>
+          <generalization Id="7471a27e-336f-42b3-a379-7592f564f583" isSubstitutable="false">
+            <classMoniker Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" LastKnownName="AbstractProcessor" />
+            <elementDefinition Id="0915f5a9-1ca7-43b8-b09e-76f12b0ee19d" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="ec754f3f-c3cf-49d2-97c6-8ed6eb372f97" name="GetName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4576dc69-8f86-47b3-a293-fd61c3c23cb0" />
+          </operation>
+          <operation Id="2926efe0-6eaa-47e5-8fb9-77dbfc06e5a0" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b122a6b-02ab-4f5c-a7c0-18eb71b5e6f1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f51e3b31-0291-41bc-8743-dc77ae0705ad" name="CandyProcessor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="08341a06-3a28-48a5-91bd-aa3189e3a4a5" />
+        <generalsInternal>
+          <generalization Id="a4fc6d7c-33f6-469a-a501-eb2e409668b0" isSubstitutable="false">
+            <classMoniker Id="581f0af9-f147-4af7-bdc9-40cfd88f3ba9" LastKnownName="AbstractProcessor" />
+            <elementDefinition Id="442d6395-4146-4d72-a6ec-1f04f1d1acf9" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="18ebfa25-0c89-4b28-9df7-4b8a651f8182" name="GetName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="503ebb51-6947-4070-a230-2d97bd3c2ec4" />
+          </operation>
+          <operation Id="49b10eec-9103-4a1a-9354-35a8d1e895f0" name="GetAvailableValues" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5f1483a4-cf16-476f-b24b-470b2e77a9c1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a20fbf39-1517-4b4f-b5b5-d596d71a238b" name="CadeMeuTrocoManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b706e47d-60af-4f90-a6c1-0ae8c91a8164" />
+        <targetEnds>
+          <association Id="e25c5ddc-f292-417c-ac68-f9983d2cb3a5" isDerived="false" sourceEndRoleName="CadeMeuTrocoManager" targetEndRoleName="ILog" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="60882f4c-3fd6-49d9-a26f-d19cd063aa42" LastKnownName="ILog" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f367f895-d6da-4998-b3b6-2ba241426468" name="CadeMeuTrocoManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="532cdb89-413d-4391-b850-d6a4d503d03d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c6bbfbe4-697b-4d03-802f-ea5f8cf9919f" name="ILog" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="93c1f8f5-62bf-442a-aea3-5e2f847b6084" name="Lower" value="*">
+                      <elementDefinition Id="7395a29a-cf0e-48c9-b7fe-9383544fca98" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9de82f31-9266-4d55-91ef-0e90392adef7" name="Upper" value="*">
+                      <elementDefinition Id="fba8bd9b-f378-4b68-8e82-29093f53b6ec" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="b83f8444-d13d-47c4-b201-1cfdd6389552" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f6651f9c-4a42-48f9-8c26-ce45e70e8316" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="d017dff5-c8ba-4b9e-9184-b786f45ea497" name="ILog" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7faa8fe0-0ec1-43a4-89bd-97f7edf9c668" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="d396359a-597c-442d-ad72-5ae74948882f" name="Calculate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1bb62ddc-c973-496d-8e0d-ab287185a92b" />
+          </operation>
+          <operation Id="dd036926-daeb-4fb8-b610-94ea91355de8" name="CalculateEntities" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8d40e97e-3ede-4610-8d19-052bfa593074" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="60882f4c-3fd6-49d9-a26f-d19cd063aa42" name="ILog" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d5461ce2-08d5-4509-ace1-c29b86cd914d" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7038173c-0617-4ea0-a9cd-4af8e6b0ca55" name="CadeMeuTroco.Moelin">
+    <elementDefinition Id="b210f2bc-1230-4636-895b-203944b99df4" />
+  </package>
+</logicalClassDesignerModel>

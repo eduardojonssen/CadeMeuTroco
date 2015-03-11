@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeMeuTroco.Core", "CadeMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadeMeuTrocoTest", "CadeMeuTrocoTeste\CadeMeuTrocoTest.csproj", "{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "CadeMeuTroco.Modeling", "CadeMeuTroco.Moelin\CadeMeuTroco.Modeling.modelproj", "{CF8481A6-F7E9-44A7-A251-17A17411E9F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{28FC4440-D934-406D-A4AF-00FEA913DAEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADF46F94-EE4F-4AF2-B3E9-53B0B94FC223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8481A6-F7E9-44A7-A251-17A17411E9F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8481A6-F7E9-44A7-A251-17A17411E9F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8481A6-F7E9-44A7-A251-17A17411E9F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8481A6-F7E9-44A7-A251-17A17411E9F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28FC4440-D934-406D-A4AF-00FEA913DAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28FC4440-D934-406D-A4AF-00FEA913DAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28FC4440-D934-406D-A4AF-00FEA913DAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28FC4440-D934-406D-A4AF-00FEA913DAEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

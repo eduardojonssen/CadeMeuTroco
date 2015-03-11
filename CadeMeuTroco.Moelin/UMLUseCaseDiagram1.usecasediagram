@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="125cdafe-86d0-44f9-afa8-70aebb0425c7" name="UMLUseCaseDiagram1" linkedPackageId="f9ff2c07-3afb-49fe-b3d4-d9d1f44ae525" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="6c62b4c0-15f0-4a60-ac7b-c78564374fcc">
+      <profileInstance Id="c99e986b-04ae-4fb9-af42-7dbdd53393bb" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4119d389-47dc-4812-b28e-c2b444eb9ced">
+      <profileInstance Id="86f2937e-adb5-4b9c-a01e-b7f19d2e46b3" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="69900f6b-c656-4bf5-beea-b666ae7c9cc7" name="Usuário comum" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="83643fa7-13dc-4ee3-bdfb-cc7303396641" />
+        <targetEnds>
+          <association Id="633d3468-4061-4449-b8ee-4e94e2331b5a" isDerived="false" sourceEndRoleName="Usuário comum" targetEndRoleName="Informa o valor do produto" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="67d3387e-f6e3-4a68-9ac9-2201d66e0ab0" LastKnownName="Informa o valor do produto" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7896c6e6-ce0e-41d6-bbc1-e0d673720034" name="Usuário comum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="046b762f-139d-46f9-ad69-d1e42175c696" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ae5ff1ee-3d04-466a-a49b-ae38de3491e2" name="Informa o valor do produto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a8a4d49c-1a12-4d9a-bdfd-11fc77b701f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fd01f972-f4c7-4b71-a045-7ffda815c666" />
+          </association>
+          <association Id="d032827d-8ac3-4739-a796-9fcdf076f5e0" isDerived="false" sourceEndRoleName="Usuário comum" targetEndRoleName="Informa o valor pago" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0e9b1843-849d-4ce7-8542-ade23974bf07" LastKnownName="Informa o valor pago" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ce4584a6-49d0-4353-b305-0a9ec2faa0de" name="Usuário comum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8f666c51-6c6d-4923-ae4b-7951d2cadb1d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3feee2b5-bca7-4d8d-bb7d-1a7ac114eb83" name="Informa o valor pago" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="49f6f5a6-f184-4f47-a6de-08cd5a241d43" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="23596534-a3ae-4db7-9feb-15ac3d641919" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="67d3387e-f6e3-4a68-9ac9-2201d66e0ab0" name="Informa o valor do produto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ec6b6288-a72c-460e-9c0e-800a24a501d0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0e9b1843-849d-4ce7-8542-ade23974bf07" name="Informa o valor pago" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e1131684-e575-42d6-b981-7d7d46f28322" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="13ba47ad-053c-4b46-83c6-0d180887f8d2" name="Sistema calcula e fornece o troco " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="120772f6-f98a-4dc9-a76f-17bfc8fc6a08" />
+        <suppliersInternal>
+          <dependency Id="e2ca75d1-f814-4e88-b078-c3f247db1ba2">
+            <useCaseMoniker Id="a0ff76fe-a195-4cb4-84e5-5656ec894f69" LastKnownName="Validar dados recebidos" />
+            <elementDefinition Id="ff1ab0d5-ad51-4d3e-821f-9d3cbea544cd" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="91070085-4092-4150-b94f-d70d076a740c" isDerived="false" sourceEndRoleName="Sistema calcula e fornece o troco " targetEndRoleName="Usuário comum" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="69900f6b-c656-4bf5-beea-b666ae7c9cc7" LastKnownName="Usuário comum" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a1a2ecaa-1009-4872-9465-7dc73efcefaf" name="Sistema calcula e fornece o troco " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="50219bff-45df-4603-8d67-09f1f2a4af92" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="85f76ceb-4667-4fe3-83e9-b14512418c28" name="Usuário comum" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a7ba6345-3278-4d91-9369-47c632573905" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bd0f6a5d-3505-4071-bddd-b23a2eb083b9" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a0ff76fe-a195-4cb4-84e5-5656ec894f69" name="Validar dados recebidos" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a7263ec4-c25a-4644-9ffc-df31ee70c4ba" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="f9ff2c07-3afb-49fe-b3d4-d9d1f44ae525" name="CadeMeuTroco.Moelin">
+    <elementDefinition Id="b210f2bc-1230-4636-895b-203944b99df4" />
+  </package>
+</useCaseModelRoot>

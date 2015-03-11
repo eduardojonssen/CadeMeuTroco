@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f1f193a3-d168-417a-8d85-6745824c2054" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="75ba0657-5d36-4cc5-9613-7c03d33337e3" name="Comment1">
+      <body>Ficou Ó, UMA BOSTA!</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="d60bb632-1c14-439e-a976-6d4cef02c06a" name="UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7985e58c-0187-4f84-bdb2-3d35ae10c782" direction="Forward">
+          <layerMoniker Id="6837b7e0-81ba-4e49-9500-507ff67bc4c4" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5ece84ff-5ce7-4bbb-815e-b03224126ade" direction="Forward">
+          <layerMoniker Id="160a1860-1196-4fda-8143-2f2b80cd885f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="61e8c832-cda7-4d57-8798-415a748dc937" name="CadeMeuTroco">
+          <ArtifactNode Label="CadeMeuTroco" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco/CadeMeuTroco.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco)" Label="CadeMeuTroco.exe" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.exe" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="6837b7e0-81ba-4e49-9500-507ff67bc4c4" name="DLL">
+      <childLayers>
+        <layer Id="ae64746b-d6e4-4941-8b42-146538181669" name="Processor">
+          <references>
+            <reference Id="f4c82672-257d-434b-9029-39916350278e" name="Processors">
+              <ArtifactNode Label="Processors" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Processors/&quot;)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=AbstractProcessor)" Label="AbstractProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=BillProcessor)" Label="BillProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=CandyProcessor)" Label="CandyProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=CoinProcessor)" Label="CoinProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=GoldProcessor)" Label="GoldProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=IProcessor)" Label="IProcessor" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=ProcessorFactory)" Label="ProcessorFactory" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Processors Type=SilverProcessor)" Label="SilverProcessor" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="93dc0b53-bd2a-4324-85f9-a1cc738815dd" name="ConfigurationUtility">
+          <references>
+            <reference Id="632506a3-8d26-40d2-bd38-64e8f51ce72a" name="ConfigurationUtility.cs">
+              <ArtifactNode Label="ConfigurationUtility.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/ConfigurationUtility.cs&quot;)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=ConfigurationUtility)" Label="ConfigurationUtility" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+            <reference Id="7509bbc2-882d-4825-9f6f-014bdcf029a5" name="IConfigurationUtility.cs">
+              <ArtifactNode Label="IConfigurationUtility.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/IConfigurationUtility.cs&quot;)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=IConfigurationUtility)" Label="IConfigurationUtility" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="4ec89d12-0672-4fe2-aba2-2b23a8aaaab2" name="CadeMeuTroco.Core">
+          <ArtifactNode Label="CadeMeuTroco.Core" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core)" Label="CadeMeuTroco.Core.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="f2adfe68-1f26-44b0-91e3-9108f933555c" name="DataBase" />
+    <layer Id="160a1860-1196-4fda-8143-2f2b80cd885f" name="Log">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="21303e52-95d1-40a1-aaee-3937ac99f267" direction="Bidirectional">
+          <layerMoniker Id="46a618a8-cb16-43a0-8510-457bea7bc524" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4b9f7ae7-5757-43ed-bc14-5cefbb6171ed" direction="Forward">
+          <layerMoniker Id="6837b7e0-81ba-4e49-9500-507ff67bc4c4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="ef03a07e-b973-49c0-89f6-3300e5d9e75c" name="DatabaseLog.cs">
+          <ArtifactNode Label="DatabaseLog.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/DatabaseLog.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=DatabaseLog)" Label="DatabaseLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="fd34d018-6b40-4af1-ad71-d1e3f2ce132e" name="EventViewerLog.cs">
+          <ArtifactNode Label="EventViewerLog.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/EventViewerLog.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=EventViewerLog)" Label="EventViewerLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="4e1c449c-d59f-41a1-890b-dd081b240d58" name="FileLog.cs">
+          <ArtifactNode Label="FileLog.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/FileLog.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=FileLog)" Label="FileLog" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="96a6f9dc-f8a3-43a6-b458-2c4677dc0449" name="ILog.cs">
+          <ArtifactNode Label="ILog.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/ILog.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=ILog)" Label="ILog" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="8896c697-d0db-4ed8-a163-34af4f1736e6" name="LogManager.cs">
+          <ArtifactNode Label="LogManager.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Util/LogManager.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Util Type=LogManager)" Label="LogManager" Category="CodeSchema_Class">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+        <reference Id="49f4f82b-a921-4b79-b27d-4102929a7d18" name="CategoryType.cs">
+          <ArtifactNode Label="CategoryType.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CategoryType.cs&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core Type=CategoryType)" Label="CategoryType" Category="CodeSchema_Enum">
+            <LinkCategory Ref="Contains" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="46a618a8-cb16-43a0-8510-457bea7bc524" name="Repository">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6e84992e-7747-4b95-aeb1-041582addd9d" direction="Forward">
+          <layerMoniker Id="f2adfe68-1f26-44b0-91e3-9108f933555c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="18043595-3164-4c02-9136-ba3371e74bac" direction="Bidirectional">
+          <layerMoniker Id="6837b7e0-81ba-4e49-9500-507ff67bc4c4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="1ef8702f-0e82-4dbf-a49c-ca4ddc2e0499" name="Repository">
+          <ArtifactNode Label="Repository" Category="CodeSchema_ProjectItem" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/CadeMeuTroco.Core.csproj&quot; File=&quot;$(PersonalUri)/visual studio 2013/Projects/CadeMeuTroco/CadeMeuTroco.Core/Repository/&quot;)">
+            <Category Ref="ProjectFolder" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Repository Type=ApplicationLogRepository)" Label="ApplicationLogRepository" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Repository.Entities Type=ApplicationLogEntity)" Label="ApplicationLogEntity" Category="CodeSchema_Class">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+          <ExpandedNode Id="(Assembly=CadeMeuTroco.Core Namespace=CadeMeuTroco.Core.Repository Type=IApplicationLogRepository)" Label="IApplicationLogRepository" Category="CodeSchema_Interface">
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>
